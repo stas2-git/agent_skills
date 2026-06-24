@@ -12,18 +12,32 @@ This repo vendors the Excel/workbook-related Codex skills as a portable package
 so they can be moved to another machine through Git.
 
 See [excel/README.md](excel/README.md) for the package overview and
-[excel/skills/README.md](excel/skills/README.md) for the copied skill set and
 install notes.
 
 ## Agent Package
 
-The `agent/` folder contains new Codex skills derived from the Kaggle Agent
-reference material. These turn the raw notes into reusable workflows for
-capstone planning, agent architecture, ADK ambient agents, security, deployment,
-human-in-the-loop frontends, skill design, agent self-audit, harness debugging,
-skill evaluation, spec-driven workflow, and protocol selection.
+The `agent/` folder is the copyable agent skill package. It has the router at
+`agent/SKILL.md`, with focused skills directly underneath it for coding-agent
+workflow, agent engineering, safety governance, ADK implementation, and capstone
+planning.
 
-See [agent/README.md](agent/README.md).
+Copy the whole folder into a skills library:
+
+```bash
+cp -R agent /path/to/skills-library/agent
+```
+
+For Codex, that looks like:
+
+```bash
+cp -R agent ~/.codex/skills/agent
+```
+
+After install, the router should be at:
+
+```text
+/path/to/skills-library/agent/SKILL.md
+```
 
 ## Reference Material
 

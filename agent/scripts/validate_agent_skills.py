@@ -9,9 +9,11 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+REPO = ROOT.parent
 MAX_SKILL_LINES = 120
 MAX_REFERENCE_LINES = 900
 STALE_PATHS = (
+    "agent/skills/",
     "agent/skills/core-methods",
     "agent/skills/self-improvement",
     "core-methods/",
@@ -99,7 +101,7 @@ def check_text_file(path: Path, errors: list[str]) -> None:
 
 
 def check_stale_paths(errors: list[str]) -> None:
-    for path in [ROOT / "README.md", ROOT / "SKILL.md", ROOT.parent.parent / "AGENTS.md"]:
+    for path in [ROOT / "SKILL.md", REPO / "README.md", REPO / "AGENTS.md"]:
         if not path.exists():
             continue
         text = path.read_text(encoding="utf-8")
