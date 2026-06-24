@@ -14,6 +14,7 @@ This repo is a portable skill library. Treat the skills as the primary product.
 - Before finishing substantial work, run a lightweight self-audit using the ideas in `agent/skills/coding-agent-workflow/agent-self-audit/SKILL.md`: intent, verification, trajectory, context drift, security risk, and residual risk.
 - When a skill is changed, think in eval terms: what prompts should trigger it, what prompts should not trigger it, and what behavior proves success?
 - After editing agent skills, run `python3 agent/skills/scripts/validate_agent_skills.py`.
+- After editing Excel skills, run `python3 excel/skills/scripts/validate_excel_skills.py`.
 - If a skill or agent behavior feels unreliable, prefer diagnosing the harness/context/tooling problem over adding more generic instructions.
 - For vague build requests, convert the request into a small spec or checklist before implementation.
 

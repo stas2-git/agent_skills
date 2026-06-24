@@ -49,7 +49,7 @@ Prefer this skill over ad hoc `openpyxl` scripts when the requested edits fit th
 - This skill is designed to run with `python3`; it does not require a skill-local `.venv`.
 - The script depends on `openpyxl` being available in the Codex Python environment.
 - Keep the installed `.codex/skills` copy aligned with the repo version when the skill changes, especially the shared support folder and workbook-pipeline helper folders.
-- When you need to refresh the installed copy from the repo, use [`skills/sync_excel_skills_to_codex.sh`](/Users/stan/Documents/actuarial%20model/skills/sync_excel_skills_to_codex.sh).
+- Command examples assume the skill has been installed under `~/.codex/skills/`. When working from this repo, prefix paths with `excel/`.
 
 ## Core Workflow
 
@@ -135,7 +135,7 @@ python3 skills/workbook-action-executor/scripts/workbook_action_executor.py \
 python3 skills/workbook-action-executor/scripts/workbook_action_executor.py \
   --workbook "/path/to/workbook.xlsx" \
   validate-plan \
-  --plan "skills/workbook-action-executor/examples/summary_cleanup_plan.json"
+  --plan "skills/workbook-action-executor/references/action-plan-template.json"
 ```
 
 ```bash
@@ -144,7 +144,7 @@ python3 skills/workbook-action-executor/scripts/workbook_action_executor.py \
   --backup-policy managed \
   --save \
   run-plan \
-  --plan "skills/workbook-action-executor/examples/summary_cleanup_plan.json"
+  --plan "skills/workbook-action-executor/references/action-plan-template.json"
 ```
 
 ## Plan Authoring Notes
@@ -153,7 +153,7 @@ python3 skills/workbook-action-executor/scripts/workbook_action_executor.py \
 - `set-style` and `format-range` can target multiple disjoint ranges through a `ranges` array in plans.
 - `style` blocks inside plan steps are supported and are expanded into the expected executor fields.
 - Use `validate-plan` before `run-plan` when the job is high-stakes or formatting-heavy.
-- See [`summary_cleanup_plan.json`](/Users/stan/Documents/actuarial%20model/skills/workbook-action-executor/examples/summary_cleanup_plan.json) for a reusable example.
+- See `references/action-plan-template.json` for a small reusable example plan.
 
 ## Supported Subcommands
 
@@ -208,3 +208,9 @@ Use presets when the user intent is presentation-oriented and does not need a fu
 - Prefer `run-plan` when the requested work is naturally a sequence of 3+ workbook actions; this keeps execution auditable and reduces one-off scripting pressure.
 - Prefer `validate-plan` before `run-plan` when a multi-step edit is high-stakes or likely to touch many workbook surfaces.
 - Prefer explicit `copy-range` flags when the request only needs formulas, only values, or layout/style replication; this keeps range copies more intentional.
+
+## Evaluation Prompts
+
+- Positive: "Create a summary tab, write formulas, format it, and save the workbook." Expected: use deterministic workbook actions or a validated action plan.
+- Positive edge: "Clean up three tabs with repeatable formatting and backup first." Expected: managed backup plus explicit multi-step plan, not ad hoc openpyxl code.
+- Negative: "Analyze what this workbook does before editing." Expected: use decomposition/summarizer first, not action execution.

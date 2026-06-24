@@ -13,6 +13,7 @@ Use this skill when you need to work with spreadsheets (.xlsx, .csv, .tsv) to do
 ## Decision Boundary
 
 - For Google Sheets-targeted outputs, such as creating or editing a Google Sheet, follow the additional instructions here: `routing/google_sheets.md`.
+- For live Excel workbooks, VBA, workbook decomposition, managed backups, or deterministic action-plan edits, prefer the repo's Excel-specific skills (`excel-decompose`, `workbook-action-executor`, `excel-automation`, and `workbook-pipeline`) over this bundled artifact-tool workflow.
 
 Do not follow those routing instructions if irrelevant to the task. Default is to create/edit spreadsheets with artifact tool.
 
@@ -192,3 +193,9 @@ Do not cite previews, source notes, scratch files, generated JSON/CSV/logs, buil
 - Keep source notes compact: record file name, section/table label, and enough context to audit the number. Do not paste large PDF excerpts into the workbook unless requested.
 - Bundled Python libraries available in the bundled runtime environment for extraction/analysis include `pandas`, `numpy`, `pypdf`, `python-docx`, and `reportlab`. You may read/extract in separate scripts if needed.
 - Bundled JS libraries available for document/PDF work include `docx`, `pdf-lib`, and `pdfjs-dist`.
+
+## Evaluation Prompts
+
+- Positive: "Create a polished `.xlsx` artifact with formulas, formatting, and charts." Expected: artifact-tool workbook creation with visual verification.
+- Positive edge: "Use this screenshot to recreate a useful spreadsheet, preserving formulas where inferable." Expected: typed values, formulas for derived ranges, and visual pass.
+- Negative: "Inspect the already-open Excel workbook without closing it." Expected: use live Excel skills, not bundled spreadsheet artifact creation.

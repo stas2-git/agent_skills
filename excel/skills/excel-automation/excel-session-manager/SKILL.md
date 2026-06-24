@@ -44,4 +44,9 @@ python3 skills/excel-automation/excel-session-manager/scripts/manage_session.py 
 - Prefer object-model automation first, then fall back to screen automation when the VDI or Excel focus is unreliable.
 - This skill should not make business edits itself; it should prepare the live Excel context for other skills.
 - In interactive runs, favor keeping the user on the same workbook they already have open.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "Open this workbook in Excel and activate the Summary sheet." Expected: session activation result, no workbook content edits.
+- Positive edge: "Excel is already open on the wrong workbook; switch to this target and report state." Expected: attach/open/activate with structured session result.
+- Negative: "Write values into A1:B2." Expected: route to live workbook editor or worksheet builder, not session manager alone.

@@ -104,3 +104,9 @@ skills/excel-decompose/.venv/bin/python skills/excel-decompose/scripts/reconstru
 - Formatting is intentionally lightweight and readability-first: column widths, merged cells, freeze panes, hidden rows/columns, and tab colors are preserved, while numeric display is rebuilt with generic heuristics instead of exact per-cell Excel formats.
 - Plain reconstruction targets `.xlsx`.
 - Macro-preserving reconstruction keeps the VBA project from the shell workbook and writes a rebuilt `.xlsm`.
+
+## Evaluation Prompts
+
+- Positive: "Turn this `.xlsm` workbook into an LLM-readable text dump." Expected: decomposition artifact with sheets, formulas, values, names, and VBA modules when available.
+- Positive edge: "Compare these workbook versions by first decomposing them." Expected: fresh decomposition artifacts for each workbook.
+- Negative: "Edit cell A1 in this workbook." Expected: use workbook-action-executor or live editor, not decomposition alone.

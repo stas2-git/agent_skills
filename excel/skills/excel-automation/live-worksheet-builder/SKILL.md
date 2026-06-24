@@ -98,3 +98,9 @@ python3 skills/excel-automation/live-worksheet-builder/scripts/build_live_worksh
 - The script defaults to leaving Excel and the workbook open. Use `--close-if-opened` only for noninteractive runs.
 - Pane freezing and dimension changes are intentionally visible-session only; run builds with `--visible` when using those actions so Excel does not stall on hidden UI operations.
 - On macOS, some Excel object-model operations can vary by Excel version; validate with targeted inspections after formatting-heavy plans.
+
+## Evaluation Prompts
+
+- Positive: "Build a new Summary worksheet in the already-open workbook so I can watch it appear." Expected: validated live plan and visible Excel build.
+- Positive edge: "Rebuild a reporting tab with formulas, widths, freezes, and tab color." Expected: multi-action live worksheet plan, not one-off cell edits.
+- Negative: "Change one cell in the open workbook." Expected: use live-workbook-editor, not worksheet builder.

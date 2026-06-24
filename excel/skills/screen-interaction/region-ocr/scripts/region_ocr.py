@@ -9,11 +9,6 @@ import tempfile
 import time
 from pathlib import Path
 
-from PIL import Image
-
-from apple_vision_ocr import text_from_image, vision_bbox_to_pixels
-
-
 def activate_app(app_name: str, settle_delay: float) -> None:
     subprocess.run(["osascript", "-e", f'tell application "{app_name}" to activate'], check=True)
     if settle_delay > 0:
@@ -44,6 +39,15 @@ def match_text(candidate: str, target: str, mode: str) -> bool:
 
 
 def ocr_records(image_path: Path, origin_x: int = 0, origin_y: int = 0, confidence_threshold: float = 0.0):
+    try:
+        from PIL import Image
+    except ModuleNotFoundError as exc:
+        raise SystemExit("Pillow is required for OCR image loading. Install pillow in the active Python environment.") from exc
+    try:
+        from apple_vision_ocr import text_from_image, vision_bbox_to_pixels
+    except ModuleNotFoundError as exc:
+        raise SystemExit("Apple Vision OCR requires pyobjc. Install pyobjc in the active Python environment.") from exc
+
     image = Image.open(image_path)
     width, height = image.size
     records = []

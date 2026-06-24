@@ -46,4 +46,9 @@ python3 skills/workbook-pipeline/validation-checklist-builder/scripts/build_chec
 - Generate a fresh checklist for every new plan. Do not assume an older checklist still matches the latest requested change.
 - Save each checklist under the active run folder and optionally mirror the latest one into `llm_work/current/`.
 - Also write the step outcome into `llm_work/runs/<timestamp>/run_log.json`.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "Build validation checks for this workbook change plan." Expected: must-pass checks for sheets, ranges, formulas, labels, charts, or OCR-visible text.
+- Positive edge: "Some checks need OCR and some need workbook inspection." Expected: checklist marks validation mechanism per item.
+- Negative: "Run the checks now." Expected: use inspection/OCR/execution tools, not checklist builder alone.

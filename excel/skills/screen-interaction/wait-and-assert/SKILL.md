@@ -45,3 +45,9 @@ skills/screen-interaction/wait-and-assert/.venv/bin/python skills/screen-interac
 - This first pass is text-only and OCR-based.
 - It intentionally does not wait on image templates yet.
 - The command exits nonzero when assertions or waits fail.
+
+## Evaluation Prompts
+
+- Positive: "Wait until the Excel dialog shows Calculation complete." Expected: poll OCR until text appears or timeout.
+- Positive edge: "Assert Loading disappeared before continuing." Expected: wait-for-no-text with nonzero failure on timeout.
+- Negative: "Click the OK button immediately." Expected: use text-target-actions, not wait/assert alone.

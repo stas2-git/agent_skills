@@ -48,4 +48,9 @@ python3 skills/workbook-pipeline/change-planner/scripts/plan_changes.py \
 - Generate a fresh plan for every new user request, even if the workbook summary is reused.
 - Save each plan under the active run folder and optionally copy the latest version into `llm_work/current/`.
 - Also write the step outcome into `llm_work/runs/<timestamp>/run_log.json`.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "Plan the workbook changes before generating code." Expected: scoped plan with affected sheets/modules, risks, and validation checks.
+- Positive edge: "Improve formulas but avoid breaking business logic." Expected: high-risk formula areas called out before edits.
+- Negative: "Apply this already-approved action plan." Expected: use executor/editor, not planner.

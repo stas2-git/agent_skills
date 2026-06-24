@@ -77,3 +77,9 @@ skills/screen-interaction/window-control/.venv/bin/python skills/screen-interact
 - This is a macOS-specific skill built around AppleScript and System Events.
 - It intentionally does not try to implement true always-on-top behavior.
 - The reviewed example code remains in `example_codes/`.
+
+## Evaluation Prompts
+
+- Positive: "Activate Excel and move the workbook window to a known position." Expected: app/window activation and bounds operation.
+- Positive edge: "Save the current frontmost window state and restore it after testing." Expected: save-state/restore-state sequence.
+- Negative: "OCR the active window." Expected: use region-capture or region-ocr after window control.

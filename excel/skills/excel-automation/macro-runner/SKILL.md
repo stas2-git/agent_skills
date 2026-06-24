@@ -36,4 +36,9 @@ python3 skills/excel-automation/macro-runner/scripts/run_macro.py \
 - Prefer explicit workbook and macro names.
 - If Excel prompts for file or automation access, capture that state for downstream reporting.
 - Keep this skill focused on execution, not screen validation.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "Run the RefreshModel macro and capture whether it succeeded." Expected: macro execution result with errors captured.
+- Positive edge: "After syncing VBA, run this macro and report any Excel prompt." Expected: attach/open, run, capture prompt or failure.
+- Negative: "Inspect VBA modules without running anything." Expected: use vba-module-sync, not macro runner.

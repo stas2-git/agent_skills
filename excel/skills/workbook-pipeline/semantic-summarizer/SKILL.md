@@ -46,4 +46,9 @@ python3 skills/workbook-pipeline/semantic-summarizer/scripts/summarize_workbook.
 - Reuse a prior summary only when the workbook has not changed since that summary was generated. Otherwise create a fresh summary in the new run folder.
 - Optionally mirror the latest brief into `llm_work/current/` for convenience.
 - Also write the step outcome into `llm_work/runs/<timestamp>/run_log.json`.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "This decomposition is too large; make a compact workbook brief." Expected: purpose, key sheets, inputs/outputs, VBA, and likely change surfaces.
+- Positive edge: "Summarize only the parts relevant to adding a diagnostics tab." Expected: task-focused compression.
+- Negative: "Change cell A1 now." Expected: use editor/executor, not semantic summarizer.

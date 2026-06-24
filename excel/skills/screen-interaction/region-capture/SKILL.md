@@ -38,3 +38,9 @@ skills/screen-interaction/region-capture/.venv/bin/python skills/screen-interact
 - This skill is intentionally capture-only.
 - OCR belongs in `region-ocr`.
 - Clicks belong in `text-target-actions`.
+
+## Evaluation Prompts
+
+- Positive: "Capture this exact screen region for later OCR." Expected: screenshot artifact or JSON path, no OCR.
+- Positive edge: "Capture the active Excel window before validation." Expected: window/app-aware capture when requested.
+- Negative: "Read the text in this image." Expected: use region-ocr, not capture only.

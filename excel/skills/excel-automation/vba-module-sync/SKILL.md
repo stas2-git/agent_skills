@@ -64,4 +64,9 @@ Open workbook in Excel -> open VBE -> insert module -> paste VBA -> save workboo
 - On follow-up runs, export VBA into the active run folder so you can compare revisions instead of overwriting the prior export silently.
 - Current write-side direction: use screen automation in Excel/VDI for opening the VBE, creating modules, pasting code, and running macros.
 - Direct Python-to-`VBProject` import is not the intended write path for this setup.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "Export the VBA modules from this `.xlsm` workbook." Expected: module listing/export artifacts, no workbook mutation.
+- Positive edge: "Inject this module through the VBE path and verify it exists." Expected: screen automation write path plus verification/export.
+- Negative: "Run the existing macro now." Expected: use macro-runner unless module sync is also needed.

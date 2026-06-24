@@ -42,4 +42,9 @@ python3 skills/excel-automation/live-workbook-inspector/scripts/inspect_live_wor
 - Prefer returning small targeted inspections rather than dumping whole-sheet contents.
 - This skill complements decomposition and `openpyxl`; it is most useful when the workbook is already open and the live session matters.
 - Use this skill before and after `live-workbook-editor` for safer iterative edits.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "Inspect the formulas and values in the active workbook range A1:F20." Expected: compact live-session inspection.
+- Positive edge: "Before editing, tell me what sheet is active and whether this named range exists." Expected: live workbook state, not file rewrite.
+- Negative: "Create a backup copy of this workbook." Expected: use backup-versioning, not live inspection.

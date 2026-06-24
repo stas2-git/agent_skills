@@ -45,3 +45,9 @@ skills/screen-interaction/region-ocr/.venv/bin/python skills/screen-interaction/
 - This skill reuses the Apple Vision OCR implementation that was first proven inside `screen-ocr-interaction`.
 - Unlike `screen-ocr-interaction`, this skill does not click anything.
 - Clicks belong in `text-target-actions`.
+
+## Evaluation Prompts
+
+- Positive: "OCR the visible Excel dialog and return the text boxes." Expected: OCR results with text/confidence/coordinates, no clicks.
+- Positive edge: "OCR only this region and filter for the word Allow." Expected: region-limited OCR with filtered matches.
+- Negative: "Click the Allow button." Expected: use text-target-actions after OCR targeting.

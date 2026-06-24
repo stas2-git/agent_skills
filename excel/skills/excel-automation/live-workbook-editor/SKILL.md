@@ -45,4 +45,9 @@ python3 skills/excel-automation/live-workbook-editor/scripts/edit_live_workbook.
 - Keep edits narrow and inspectable; avoid large opaque mutations without first gathering local context.
 - Prefer object-model automation first and screen automation as a fallback when the VDI blocks direct control.
 - This skill should pair naturally with `excel-session-manager` and `live-workbook-inspector`.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "In the open workbook, change A1 and freeze panes without closing Excel." Expected: live Excel object-model edit.
+- Positive edge: "Make a small live formatting fix while the user watches." Expected: narrow live edit with save status explicit.
+- Negative: "Build an entire workbook from scratch." Expected: use workbook-action-executor or spreadsheets, not live editor.

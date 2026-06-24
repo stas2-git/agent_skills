@@ -49,3 +49,13 @@ cp -R excel/skills/_shared ~/.codex/skills/
 
 The `spreadsheets` skill came from the bundled primary runtime cache, so install
 it wherever your work Codex setup expects bundled or user-provided skills.
+
+## Validate
+
+Run the local checks after adding, moving, or editing Excel skills:
+
+```bash
+python3 excel/skills/scripts/validate_excel_skills.py
+```
+
+The validator checks frontmatter, expected eval prompts, linked resources, stale machine-local paths, code fences, active reference size, and known folder/name exceptions.

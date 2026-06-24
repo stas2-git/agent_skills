@@ -12,7 +12,6 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from openpyxl import load_workbook
-from oletools.olevba import VBA_Parser
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _shared.llm_work_audit import (  # type: ignore  # noqa: E402
@@ -187,6 +186,13 @@ def build_downstream_artifact_paths(llm_work_root: Path, run_id: str) -> dict[st
 
 
 def extract_vba_modules(workbook_path: Path) -> list[dict]:
+    try:
+        from oletools.olevba import VBA_Parser
+    except ModuleNotFoundError as exc:
+        raise RuntimeError(
+            "VBA extraction for .xlsm files requires oletools. Install oletools or decompose an .xlsx workbook."
+        ) from exc
+
     modules: list[dict] = []
     parser = VBA_Parser(str(workbook_path))
     try:

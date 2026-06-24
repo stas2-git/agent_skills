@@ -22,7 +22,7 @@ Use this skill before any autonomous workbook modification.
 4. Default downstream edits to the original workbook unless the run explicitly chooses `working_copy`.
 5. Optionally create a second working copy for cautious edits.
 6. Emit a mapping from original path to backup path, working path, and intended edit target.
-6. Append a backup event to the run log.
+7. Append a backup event to the run log.
 
 ## Expected output
 
@@ -58,4 +58,9 @@ python3 skills/workbook-pipeline/backup-versioning/scripts/backup_workbooks.py \
 - Also write the step outcome into `llm_work/runs/<timestamp>/run_log.json`.
 - Always create a fresh backup for each new improvement run, even if earlier backups already exist.
 - Preserve prior runs under `llm_work/runs/<timestamp>/`; do not reuse old working copies as the new default.
-- Planned follow-up ideas live in `FUTURE_IMPROVEMENTS.md`.
+
+## Evaluation Prompts
+
+- Positive: "Before editing these two workbooks, create timestamped backups." Expected: backup map and untouched copies.
+- Positive edge: "This formula change is risky; make a working copy instead of editing original." Expected: backup plus `working_copy` edit target.
+- Negative: "Tell me what sheets are in the workbook." Expected: use decomposition or inspection, not backup.
