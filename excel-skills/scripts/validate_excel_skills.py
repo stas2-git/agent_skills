@@ -9,11 +9,11 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO = ROOT.parents[1]
+REPO = ROOT.parent
 MAX_SKILL_LINES = 220
 MAX_ACTIVE_REFERENCE_LINES = 900
 ALLOWED_NAME_FOLDER_MISMATCH = {
-    ("skills", "excel-skills-router"),
+    ("excel-skills", "excel-skills-router"),
     ("macro-runner", "workbook-macro-runner"),
     ("backup-versioning", "workbook-backup-versioning"),
     ("change-planner", "workbook-change-planner"),
@@ -30,6 +30,9 @@ DISALLOWED_ACTIVE_FILES = {
 STALE_PATTERNS = (
     "/Users/stan/Documents/actuarial",
     "/Users/stan/Documents/excel_llm_project",
+    "excel/skills/",
+    "excel/skills/SKILL.md",
+    "excel/skills/scripts/validate_excel_skills.py",
     "skills/sync_excel_skills_to_codex.sh",
 )
 

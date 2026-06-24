@@ -6,37 +6,44 @@ The root [AGENTS.md](AGENTS.md) defines the always-on behavior for this repo:
 use the skill router, self-audit substantial work, and think in evals when skills
 change.
 
-## Excel Package
-
-This repo vendors the Excel/workbook-related Codex skills as a portable package
-so they can be moved to another machine through Git.
-
-See [excel/README.md](excel/README.md) for the package overview and
-install notes.
-
-## Agent Package
+## Skill Packages
 
 The `agent-skills/` folder is the copyable agent skill package. It has the router at
 `agent-skills/SKILL.md`, with focused skills directly underneath it for coding-agent
 workflow, agent engineering, safety governance, ADK implementation, and capstone
 planning.
 
-Copy the whole folder into a skills library:
+The `excel-skills/` folder is the copyable Excel/workbook skill package. It has
+the router at `excel-skills/SKILL.md`, with focused skills underneath it for
+spreadsheet artifacts, workbook decomposition, deterministic workbook edits,
+live Excel automation, VBA/macros, workbook pipelines, and screen interaction.
+
+Copy the whole folder into a skills library.
+
+Agent skills:
 
 ```bash
 cp -R agent-skills /path/to/skills-library/agent-skills
+```
+
+Excel skills:
+
+```bash
+cp -R excel-skills /path/to/skills-library/excel-skills
 ```
 
 For Codex, that looks like:
 
 ```bash
 cp -R agent-skills ~/.codex/skills/agent-skills
+cp -R excel-skills ~/.codex/skills/excel-skills
 ```
 
-After install, the router should be at:
+After install, the routers should be at:
 
 ```text
 /path/to/skills-library/agent-skills/SKILL.md
+/path/to/skills-library/excel-skills/SKILL.md
 ```
 
 ## Reference Material
