@@ -11,9 +11,13 @@ local Codex skill directories.
 - `workbook-pipeline`
 - `spreadsheets`
 - `screen-interaction`
+- `_shared`
 
 `screen-interaction` is included because some workbook validation and live Excel
 workflows refer to visible-screen checks.
+
+`_shared` is included because the workbook scripts import shared audit/logging
+helpers from `_shared.llm_work_audit`.
 
 ## Excluded
 
@@ -39,6 +43,7 @@ cp -R skills/excel-automation ~/.codex/skills/
 cp -R skills/workbook-action-executor ~/.codex/skills/
 cp -R skills/workbook-pipeline ~/.codex/skills/
 cp -R skills/screen-interaction ~/.codex/skills/
+cp -R skills/_shared ~/.codex/skills/
 ```
 
 The `spreadsheets` skill came from the bundled primary runtime cache, so install
