@@ -5,18 +5,29 @@ portable Codex skill folders.
 
 ## Included
 
-- `kaggle-capstone-planner`
+### `core-methods/`
+
 - `agent-architecture-methods`
 - `agent-skill-design`
+- `agent-protocol-selector`
+
+### `self-improvement/`
+
 - `agent-self-audit`
 - `context-harness-debugger`
 - `skill-evaluation-loop`
 - `spec-driven-agent-workflow`
-- `agent-protocol-selector`
+
+### `adk-implementation/`
+
 - `adk-ambient-agent`
 - `adk-secure-lifecycle`
 - `adk-runtime-deployment`
 - `adk-hitl-frontend`
+
+### `capstone/`
+
+- `kaggle-capstone-planner`
 
 Each skill keeps `SKILL.md` short and stores detailed source material under its
 own `references/` folder.
@@ -26,16 +37,22 @@ own `references/` folder.
 Copy selected skills into your Codex skills directory:
 
 ```bash
-cp -R agent/skills/kaggle-capstone-planner ~/.codex/skills/
-cp -R agent/skills/agent-architecture-methods ~/.codex/skills/
-cp -R agent/skills/agent-skill-design ~/.codex/skills/
-cp -R agent/skills/agent-self-audit ~/.codex/skills/
-cp -R agent/skills/context-harness-debugger ~/.codex/skills/
-cp -R agent/skills/skill-evaluation-loop ~/.codex/skills/
-cp -R agent/skills/spec-driven-agent-workflow ~/.codex/skills/
-cp -R agent/skills/agent-protocol-selector ~/.codex/skills/
-cp -R agent/skills/adk-ambient-agent ~/.codex/skills/
-cp -R agent/skills/adk-secure-lifecycle ~/.codex/skills/
-cp -R agent/skills/adk-runtime-deployment ~/.codex/skills/
-cp -R agent/skills/adk-hitl-frontend ~/.codex/skills/
+cp -R agent/skills/core-methods/agent-architecture-methods ~/.codex/skills/
+cp -R agent/skills/core-methods/agent-skill-design ~/.codex/skills/
+cp -R agent/skills/core-methods/agent-protocol-selector ~/.codex/skills/
+cp -R agent/skills/self-improvement/agent-self-audit ~/.codex/skills/
+cp -R agent/skills/self-improvement/context-harness-debugger ~/.codex/skills/
+cp -R agent/skills/self-improvement/skill-evaluation-loop ~/.codex/skills/
+cp -R agent/skills/self-improvement/spec-driven-agent-workflow ~/.codex/skills/
+cp -R agent/skills/adk-implementation/adk-ambient-agent ~/.codex/skills/
+cp -R agent/skills/adk-implementation/adk-secure-lifecycle ~/.codex/skills/
+cp -R agent/skills/adk-implementation/adk-runtime-deployment ~/.codex/skills/
+cp -R agent/skills/adk-implementation/adk-hitl-frontend ~/.codex/skills/
+cp -R agent/skills/capstone/kaggle-capstone-planner ~/.codex/skills/
+```
+
+Or install an entire group:
+
+```bash
+cp -R agent/skills/self-improvement/* ~/.codex/skills/
 ```
