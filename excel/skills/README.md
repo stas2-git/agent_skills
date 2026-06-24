@@ -1,10 +1,12 @@
-# Excel Skills
+# Excel Skills Group
 
-This folder contains the Excel/workbook-oriented Codex skills copied from the
-local Codex skill directories.
+This folder is a grouped Excel skill package. `SKILL.md` is the high-level router
+that chooses the focused workbook, spreadsheet, live Excel, VBA, pipeline, or
+screen-interaction skill to load next.
 
 ## Included
 
+- `SKILL.md` router: `excel-skills-router`
 - `excel-decompose`
 - `excel-automation`
 - `workbook-action-executor`
@@ -19,23 +21,30 @@ workflows refer to visible-screen checks.
 `_shared` is included because the workbook scripts import shared audit/logging
 helpers from `_shared.llm_work_audit`.
 
-## Excluded
+## Install
 
-Machine-local/generated files were intentionally left out:
-
-- `.venv/`
-- `.DS_Store`
-- prior decomposition/output workbook artifacts
-- prior drop-folder workbook artifacts
-
-On another machine, copy or symlink the needed folders from this `excel/skills/`
-directory into the target Codex skills directory, usually:
+Recommended grouped install:
 
 ```bash
-~/.codex/skills/
+cp -R excel/skills ~/.codex/skills/excel
 ```
 
-For example:
+This installs one Excel group folder with the router at:
+
+```text
+~/.codex/skills/excel/SKILL.md
+```
+
+Focused skills remain inside that group folder, for example:
+
+```text
+~/.codex/skills/excel/excel-decompose/SKILL.md
+~/.codex/skills/excel/workbook-action-executor/SKILL.md
+~/.codex/skills/excel/excel-automation/live-workbook-editor/SKILL.md
+```
+
+If a Codex setup expects flat skill folders instead, copy the focused skills
+individually:
 
 ```bash
 cp -R excel/skills/excel-decompose ~/.codex/skills/
@@ -46,6 +55,15 @@ cp -R excel/skills/screen-interaction ~/.codex/skills/
 cp -R excel/skills/spreadsheets ~/.codex/skills/
 cp -R excel/skills/_shared ~/.codex/skills/
 ```
+
+## Excluded
+
+Machine-local/generated files were intentionally left out:
+
+- `.venv/`
+- `.DS_Store`
+- prior decomposition/output workbook artifacts
+- prior drop-folder workbook artifacts
 
 The `spreadsheets` skill came from the bundled primary runtime cache, so install
 it wherever your work Codex setup expects bundled or user-provided skills.

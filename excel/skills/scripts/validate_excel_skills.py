@@ -13,6 +13,7 @@ REPO = ROOT.parents[1]
 MAX_SKILL_LINES = 220
 MAX_ACTIVE_REFERENCE_LINES = 900
 ALLOWED_NAME_FOLDER_MISMATCH = {
+    ("skills", "excel-skills-router"),
     ("macro-runner", "workbook-macro-runner"),
     ("backup-versioning", "workbook-backup-versioning"),
     ("change-planner", "workbook-change-planner"),
