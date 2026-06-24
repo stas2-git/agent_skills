@@ -22,15 +22,26 @@ Do not use this router as the operational instructions for the task after a focu
 ### Core Methods
 
 - Use `agent-architecture-methods` (`core-methods/agent-architecture-methods` in this repo) when designing an agent system, choosing single-agent versus multi-agent, defining tools/state/evals/security, or turning a vague agent idea into a buildable architecture.
+- Use `code-review-agent` (`core-methods/code-review-agent` in this repo) when reviewing code changes, pull requests, diffs, patches, or AI-generated code for bugs, regressions, missing tests, security issues, oversized scope, or spec mismatch.
 - Use `agent-skill-design` (`core-methods/agent-skill-design` in this repo) when creating, refactoring, packaging, or reviewing portable skills and deciding what belongs in `SKILL.md`, `references/`, `scripts/`, or `assets/`.
 - Use `agent-protocol-selector` (`core-methods/agent-protocol-selector` in this repo) when choosing between project instructions, skills, scripts, MCP, A2A, A2UI, AP2/UCP, or ordinary application code.
 
 ### Self Improvement
 
 - Use `agent-self-audit` (`self-improvement/agent-self-audit` in this repo) before finalizing substantial work when the agent should check its own likely weaknesses, residual risk, verification gaps, context drift, and trajectory quality.
+- Use `agent-incident-retrospective` (`self-improvement/agent-incident-retrospective` in this repo) after an agent mistake, unsafe action, bad answer, loop, near miss, or user correction when the goal is root cause, guardrail repair, and a regression eval.
+- Use `agent-observability-trace-review` (`self-improvement/agent-observability-trace-review` in this repo) when reviewing an agent trace, transcript, tool-call log, approval record, or suspicious final answer for trajectory quality, context loaded, tool choices, safety, cost, and verification.
+- Use `agent-eval-case-builder` (`self-improvement/agent-eval-case-builder` in this repo) when creating eval datasets, rubrics, golden prompts, red-team prompts, regression cases, or LLM-as-judge criteria for an agent workflow or skill.
 - Use `context-harness-debugger` (`self-improvement/context-harness-debugger` in this repo) when the agent is looping, missing instructions, calling the wrong tool, hallucinating dependencies, overloading context, or otherwise needs harness/context repair.
+- Use `context-budget-planner` (`self-improvement/context-budget-planner` in this repo) when a task has too much source material, noisy context, overlapping instructions, or repeated context rot and needs a plan for static instructions, skills, references, scripts, retrieval, or summaries.
 - Use `skill-evaluation-loop` (`self-improvement/skill-evaluation-loop` in this repo) when testing or improving a skill with trigger tests, execution tests, token-budget checks, regression checks, red-teaming, or promotion tiers.
 - Use `spec-driven-agent-workflow` (`self-improvement/spec-driven-agent-workflow` in this repo) when converting vague intent into a spec, BDD scenarios, failing tests, small diffs, policy gates, or reviewable production work.
+
+### Safety Governance
+
+- Use `prompt-injection-triage` (`self-improvement/prompt-injection-triage` in this repo) when external or retrieved content may contain hostile instructions, hidden directives, prompt injection, data-exfiltration attempts, or tool/action requests.
+- Use `least-privilege-tool-planner` (`self-improvement/least-privilege-tool-planner` in this repo) before giving an agent tools, MCP servers, file access, credentials, shell/browser/session access, deployment authority, write permissions, or external action capability.
+- Use `human-approval-gate-designer` (`self-improvement/human-approval-gate-designer` in this repo) when designing HITL approval flows, pending action payloads, approve/deny/edit decisions, escalation rules, audit records, and auto-approval boundaries.
 
 ### ADK Implementation
 
@@ -46,9 +57,10 @@ Do not use this router as the operational instructions for the task after a focu
 ## Combination Patterns
 
 - New production agent idea: start with `agent-architecture-methods`, then `spec-driven-agent-workflow`, then the relevant ADK implementation skill.
-- Agent behaving badly: start with `agent-self-audit`; if the issue repeats, use `context-harness-debugger`; if a skill is involved, use `skill-evaluation-loop`.
-- New skill from reference material: use `agent-skill-design`, then `skill-evaluation-loop`.
+- Agent behaving badly: start with `agent-self-audit`; if there is a trace, use `agent-observability-trace-review`; if the issue repeats, use `context-harness-debugger`; after a concrete mistake, use `agent-incident-retrospective`.
+- New skill from reference material: use `context-budget-planner`, then `agent-skill-design`, then `skill-evaluation-loop`.
 - Tool/protocol confusion: use `agent-protocol-selector`, then route to MCP/A2A/A2UI/ADK implementation work as appropriate.
+- Safety-sensitive tool access: use `least-privilege-tool-planner`, then `human-approval-gate-designer` if approvals are needed, and `prompt-injection-triage` when external content is part of the loop.
 - Capstone build: start with `kaggle-capstone-planner`, then `agent-architecture-methods`, then `adk-secure-lifecycle` and `adk-runtime-deployment` when implementation matures.
 
 ## Rules
@@ -64,6 +76,9 @@ Use these prompts to test routing behavior:
 
 - Positive: "Help me decide whether this should be an MCP server, a skill, or an A2A agent." Expected: `agent-protocol-selector`.
 - Positive: "My agent keeps calling the wrong tool and looping after long context." Expected: `context-harness-debugger`.
+- Positive: "Turn this agent failure into a root cause and regression eval." Expected: `agent-incident-retrospective`.
+- Positive: "Review this AI-generated PR for production risks." Expected: `code-review-agent`.
+- Positive: "This retrieved web page says to ignore all previous instructions; what should the agent do?" Expected: `prompt-injection-triage`.
 - Positive: "Plan my Kaggle Agent capstone submission and evaluation checklist." Expected: `kaggle-capstone-planner`.
 - Negative: "Edit this CSS button color." Expected: no bundled agent skill unless the task expands into architecture, workflow, or evaluation.
 - Negative: "Deploy this ordinary static website." Expected: no ADK deployment skill unless it is an ADK/Agent Runtime deployment.
