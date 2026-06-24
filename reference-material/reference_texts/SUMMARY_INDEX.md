@@ -18,13 +18,13 @@ These are the main bridge from the codelabs to the capstone. They explain the wo
 | If the task is about… | Read first | Then read |
 |---|---|---|
 | Capstone requirements or submission | [`capstone/capstone_project_spec.txt`](capstone/capstone_project_spec.txt) | [`capstone/capstone_rules.txt`](capstone/capstone_rules.txt) |
-| Choosing an agent architecture | [`capstone/agent_building_methods_extraction.txt`](capstone/agent_building_methods_extraction.txt) | [`whitepapers/day1_vibe_coding_intro.txt`](whitepapers/day1_vibe_coding_intro.txt) |
+| Choosing an agent architecture | [`capstone/agent_building_methods_extraction.txt`](capstone/agent_building_methods_extraction.txt) | [`whitepapers/summaries/day1-vibe-coding-intro.md`](whitepapers/summaries/day1-vibe-coding-intro.md) |
 | Ambient/event-driven agents | [Ambient implementation spec](implementation_specs/cl4_ambient_agent_spec.md) | [`codelabs/cl4_ambient_agent.txt`](codelabs/cl4_ambient_agent.txt) |
-| Security, guardrails, or human review | [Security implementation spec](implementation_specs/cl4_secure_agent_lifecycle_spec.md) | [`whitepapers/day4_security_evaluation.txt`](whitepapers/day4_security_evaluation.txt) |
-| Agent tools, MCP, or interoperability | [`whitepapers/day2_agent_tools_interop.txt`](whitepapers/day2_agent_tools_interop.txt) | [`whitepapers/day3_agent_skills.txt`](whitepapers/day3_agent_skills.txt) |
+| Security, guardrails, or human review | [Security implementation spec](implementation_specs/cl4_secure_agent_lifecycle_spec.md) | [`whitepapers/summaries/day4-security-evaluation.md`](whitepapers/summaries/day4-security-evaluation.md) |
+| Agent tools, MCP, or interoperability | [`whitepapers/summaries/day2-agent-tools-interop.md`](whitepapers/summaries/day2-agent-tools-interop.md) | [`whitepapers/summaries/day3-agent-skills.md`](whitepapers/summaries/day3-agent-skills.md) |
 | ADK/Agents CLI deployment | [Deployment implementation spec](implementation_specs/cl5_agent_runtime_deployment_spec.md) | [`codelabs/cl5_deploy_adk_agent_runtime.txt`](codelabs/cl5_deploy_adk_agent_runtime.txt) |
 | Agent frontend or human-in-the-loop UI | [Frontend implementation spec](implementation_specs/cl5_agent_frontend_spec.md) | [`codelabs/cl5_vibecode_deploy_frontend.txt`](codelabs/cl5_vibecode_deploy_frontend.txt) |
-| Production/spec-driven development | [`whitepapers/day5_spec_driven_production_dev.txt`](whitepapers/day5_spec_driven_production_dev.txt) | Relevant codelab implementation spec |
+| Production/spec-driven development | [`whitepapers/summaries/day5-spec-driven-production.md`](whitepapers/summaries/day5-spec-driven-production.md) | Relevant codelab implementation spec |
 
 ## Capstone documents
 
@@ -38,8 +38,15 @@ These are the main bridge from the codelabs to the capstone. They explain the wo
 
 ## Whitepapers
 
+Start with [`whitepapers/summaries/README.md`](whitepapers/summaries/README.md) when extracting or refactoring skills. The full `.txt` files are retained as source material for deeper detail.
+
 | Document | Primary concepts |
 |---|---|
+| [`whitepapers/summaries/day1-vibe-coding-intro.md`](whitepapers/summaries/day1-vibe-coding-intro.md) | Skill-shaped summary of intent-driven development, context engineering, harnesses, and verification. |
+| [`whitepapers/summaries/day2-agent-tools-interop.md`](whitepapers/summaries/day2-agent-tools-interop.md) | Skill-shaped summary of MCP, A2A, A2UI, AP2/UCP, protocol choice, and tool governance. |
+| [`whitepapers/summaries/day3-agent-skills.md`](whitepapers/summaries/day3-agent-skills.md) | Skill-shaped summary of portable skills, progressive disclosure, routing, packaging, and evals. |
+| [`whitepapers/summaries/day4-security-evaluation.md`](whitepapers/summaries/day4-security-evaluation.md) | Skill-shaped summary of agent security, least privilege, observability, and evaluation. |
+| [`whitepapers/summaries/day5-spec-driven-production.md`](whitepapers/summaries/day5-spec-driven-production.md) | Skill-shaped summary of spec-driven development, BDD, review workflow, and production gates. |
 | [`whitepapers/day1_vibe_coding_intro.txt`](whitepapers/day1_vibe_coding_intro.txt) | Intent-driven development, context engineering, and the software-factory model. |
 | [`whitepapers/day2_agent_tools_interop.txt`](whitepapers/day2_agent_tools_interop.txt) | Tools, MCP, A2A, A2UI, AP2, and UCP. |
 | [`whitepapers/day3_agent_skills.txt`](whitepapers/day3_agent_skills.txt) | Portable skills and progressive context loading. |
