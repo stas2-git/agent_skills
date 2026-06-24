@@ -13,6 +13,9 @@ REPO = ROOT.parent
 MAX_SKILL_LINES = 120
 MAX_REFERENCE_LINES = 900
 STALE_PATHS = (
+    "agent/SKILL.md",
+    "agent/coding-agent-workflow",
+    "agent/scripts/validate_agent_skills.py",
     "agent/skills/",
     "agent/skills/core-methods",
     "agent/skills/self-improvement",

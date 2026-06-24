@@ -16,27 +16,27 @@ install notes.
 
 ## Agent Package
 
-The `agent/` folder is the copyable agent skill package. It has the router at
-`agent/SKILL.md`, with focused skills directly underneath it for coding-agent
+The `agent-skills/` folder is the copyable agent skill package. It has the router at
+`agent-skills/SKILL.md`, with focused skills directly underneath it for coding-agent
 workflow, agent engineering, safety governance, ADK implementation, and capstone
 planning.
 
 Copy the whole folder into a skills library:
 
 ```bash
-cp -R agent /path/to/skills-library/agent
+cp -R agent-skills /path/to/skills-library/agent-skills
 ```
 
 For Codex, that looks like:
 
 ```bash
-cp -R agent ~/.codex/skills/agent
+cp -R agent-skills ~/.codex/skills/agent-skills
 ```
 
 After install, the router should be at:
 
 ```text
-/path/to/skills-library/agent/SKILL.md
+/path/to/skills-library/agent-skills/SKILL.md
 ```
 
 ## Reference Material

@@ -4,7 +4,7 @@ This repo is a portable skill library. Treat the skills as the primary product.
 
 ## Default Behavior
 
-- When a task touches agent design, skill design, ADK, capstone work, protocol choice, deployment, security, or agent self-improvement, first consult `agent/SKILL.md` as the router.
+- When a task touches agent design, skill design, ADK, capstone work, protocol choice, deployment, security, or agent self-improvement, first consult `agent-skills/SKILL.md` as the router.
 - After the router selects a focused skill, read that focused skill's `SKILL.md` before editing or advising.
 - Load reference files only when the focused skill says they are relevant to the immediate task.
 - For Excel/workbook work, use the skills under `excel/skills/`.
@@ -12,9 +12,9 @@ This repo is a portable skill library. Treat the skills as the primary product.
 
 ## Automatic Self-Improvement Habits
 
-- Before finishing substantial work, run a lightweight self-audit using the ideas in `agent/coding-agent-workflow/agent-self-audit/SKILL.md`: intent, verification, trajectory, context drift, security risk, and residual risk.
+- Before finishing substantial work, run a lightweight self-audit using the ideas in `agent-skills/coding-agent-workflow/agent-self-audit/SKILL.md`: intent, verification, trajectory, context drift, security risk, and residual risk.
 - When a skill is changed, think in eval terms: what prompts should trigger it, what prompts should not trigger it, and what behavior proves success?
-- After editing agent skills, run `python3 agent/scripts/validate_agent_skills.py`.
+- After editing agent skills, run `python3 agent-skills/scripts/validate_agent_skills.py`.
 - After editing Excel skills, run `python3 excel/skills/scripts/validate_excel_skills.py`.
 - If a skill or agent behavior feels unreliable, prefer diagnosing the harness/context/tooling problem over adding more generic instructions.
 - For vague build requests, convert the request into a small spec or checklist before implementation.
