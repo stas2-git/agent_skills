@@ -1,6 +1,7 @@
-# Agent Skills
+# Portable Skills Library
 
-Project workspace for developing and organizing agent skills.
+Project workspace for developing and organizing portable agent, Excel, and SQL
+skill packages.
 
 The root [AGENTS.md](AGENTS.md) defines the always-on behavior for this repo:
 use the skill router, self-audit substantial work, and think in evals when skills
@@ -9,11 +10,11 @@ change.
 ## Skills Library
 
 The `skills-library/` folder contains the copyable skill packages. Copy its
-contents into another machine's skills library, or copy individual package
+contents into another machine's skills directory, or copy individual package
 folders from inside it.
 
 ```bash
-cp -R skills-library/* /path/to/skills-library/
+cp -R skills-library/* /path/to/target-skills-dir/
 ```
 
 The `skills-library/agent-skills/` folder is the agent skill package. It has the router at
@@ -35,19 +36,19 @@ To install package folders individually:
 Agent skills:
 
 ```bash
-cp -R skills-library/agent-skills /path/to/skills-library/agent-skills
+cp -R skills-library/agent-skills /path/to/target-skills-dir/agent-skills
 ```
 
 Excel skills:
 
 ```bash
-cp -R skills-library/excel-skills /path/to/skills-library/excel-skills
+cp -R skills-library/excel-skills /path/to/target-skills-dir/excel-skills
 ```
 
 SQL skills:
 
 ```bash
-cp -R skills-library/sql-skills /path/to/skills-library/sql-skills
+cp -R skills-library/sql-skills /path/to/target-skills-dir/sql-skills
 ```
 
 For Codex, that looks like:
@@ -61,13 +62,23 @@ cp -R skills-library/sql-skills ~/.codex/skills/sql-skills
 After install, the routers should be at:
 
 ```text
-/path/to/skills-library/agent-skills/SKILL.md
-/path/to/skills-library/excel-skills/SKILL.md
-/path/to/skills-library/sql-skills/SKILL.md
+/path/to/target-skills-dir/agent-skills/SKILL.md
+/path/to/target-skills-dir/excel-skills/SKILL.md
+/path/to/target-skills-dir/sql-skills/SKILL.md
+```
+
+## Validate
+
+Run the relevant package validator after editing a skill package:
+
+```bash
+python3 skills-library/agent-skills/scripts/validate_agent_skills.py
+python3 skills-library/excel-skills/scripts/validate_excel_skills.py
+python3 skills-library/sql-skills/scripts/validate_sql_skills.py
 ```
 
 ## Reference Material
 
-The `reference-material/` folder contains the copied Kaggle Agent reference
-material, including source PDFs/RTFs, codelabs, extracted text, and
-implementation specs.
+The `reference-material/` folder contains source and extracted reference
+material used to build the skill packages. It is not part of the copyable skills
+library.
