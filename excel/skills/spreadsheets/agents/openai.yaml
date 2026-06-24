@@ -4,4 +4,4 @@ interface:
   icon_small: "./assets/file-spreadsheet.png"
   icon_large: "./assets/file-spreadsheet.png"
   brand_color: "#107C41"
-  default_prompt: "Use $Spreadsheets to build or update a spreadsheet artifact with formulas, formatting, and verification."
+  default_prompt: "Use $spreadsheets to build or update a spreadsheet artifact with formulas, formatting, and verification."

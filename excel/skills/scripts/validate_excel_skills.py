@@ -13,13 +13,19 @@ REPO = ROOT.parents[1]
 MAX_SKILL_LINES = 220
 MAX_ACTIVE_REFERENCE_LINES = 900
 ALLOWED_NAME_FOLDER_MISMATCH = {
-    ("spreadsheets", "Spreadsheets"),
     ("macro-runner", "workbook-macro-runner"),
     ("backup-versioning", "workbook-backup-versioning"),
     ("change-planner", "workbook-change-planner"),
     ("semantic-summarizer", "workbook-semantic-summarizer"),
 }
 SKIP_DIR_PARTS = {"examples", "example_codes", "__pycache__"}
+DISALLOWED_ACTIVE_DIRS = {"decompose_drop", "example_codes", "examples", "output", "reconstruct_drop"}
+DISALLOWED_ACTIVE_FILES = {
+    "FUTURE_IMPROVEMENTS.md",
+    "GAME_PLAN.md",
+    "RELATION_TO_OLDER_SKILL.md",
+    "web-examples.md",
+}
 STALE_PATTERNS = (
     "/Users/stan/Documents/actuarial",
     "/Users/stan/Documents/excel_llm_project",
@@ -116,8 +122,17 @@ def check_file(path: Path, errors: list[str]) -> None:
             add(errors, path, f"active reference exceeds {MAX_ACTIVE_REFERENCE_LINES} lines")
 
 
+def check_active_tree(errors: list[str]) -> None:
+    for path in sorted(ROOT.glob("**/*")):
+        if path.is_dir() and path.name in DISALLOWED_ACTIVE_DIRS:
+            add(errors, path, "move examples, research code, and generated artifacts outside installable skills")
+        if path.is_file() and path.name in DISALLOWED_ACTIVE_FILES:
+            add(errors, path, "move development notes to reference-material, not installable skills")
+
+
 def main() -> int:
     errors: list[str] = []
+    check_active_tree(errors)
     for path in sorted(ROOT.glob("**/SKILL.md")):
         check_skill(path, errors)
     for path in sorted(ROOT.glob("**/*")):

@@ -58,4 +58,4 @@ Run the local checks after adding, moving, or editing Excel skills:
 python3 excel/skills/scripts/validate_excel_skills.py
 ```
 
-The validator checks frontmatter, expected eval prompts, linked resources, stale machine-local paths, code fences, active reference size, and known folder/name exceptions.
+The validator checks frontmatter, expected eval prompts, linked resources, stale machine-local paths, code fences, active reference size, folder/name alignment, and installable-skill clutter such as examples, dev notes, and generated artifacts.

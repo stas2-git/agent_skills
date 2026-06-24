@@ -1,6 +1,6 @@
 ---
-name: "Spreadsheets"
-description: "Use this skill when a user requests to create, modify, analyze, visualize, or work with spreadsheet files (`.xlsx`, `.xls`, `.csv`, `.tsv`) or Google Sheets-targeted spreadsheet artifacts with formulas, formatting, charts, tables, and recalculation."
+name: spreadsheets
+description: Use when a user requests to create, modify, analyze, visualize, or work with spreadsheet files (`.xlsx`, `.xls`, `.csv`, `.tsv`) or Google Sheets-targeted spreadsheet artifacts with formulas, formatting, charts, tables, and recalculation.
 ---
 
 # Spreadsheets skill (Create • Edit • Analyze • Visualize)
@@ -44,7 +44,7 @@ You must read these domain rules when the request clearly relates to the domain,
 - Marketing and advertising: `domain_guidance/marketing_advertising.md`
 - Scientific research: `domain_guidance/scientific_research.md`
 
-Instruction precedance is as follows: user request > reference/template > domain/formatting defaults
+Instruction precedence is as follows: user request > reference/template > domain/formatting defaults.
 
 ## Making edits on a spreadsheet or using an uploaded reference or template.
 - Before modifying: ALWAYS study and match the existing format, style and conventions when making edits by rendering and viewing the image. Read related values and formulas.
