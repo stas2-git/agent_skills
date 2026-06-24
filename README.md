@@ -11,6 +11,15 @@ See [excel/README.md](excel/README.md) for the package overview and
 [excel/skills/README.md](excel/skills/README.md) for the copied skill set and
 install notes.
 
+## Agent Package
+
+The `agent/` folder contains new Codex skills derived from the Kaggle Agent
+reference material. These turn the raw notes into reusable workflows for
+capstone planning, agent architecture, ADK ambient agents, security, deployment,
+human-in-the-loop frontends, and skill design.
+
+See [agent/README.md](agent/README.md).
+
 ## Reference Material
 
 The `reference-material/` folder contains the copied Kaggle Agent reference
