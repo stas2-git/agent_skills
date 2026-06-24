@@ -17,6 +17,13 @@ STALE_PATHS = (
     "core-methods/",
     "self-improvement/",
 )
+DISALLOWED_ACTIVE_FILES = {
+    "README.md",
+    "FUTURE_IMPROVEMENTS.md",
+    "GAME_PLAN.md",
+    "RELATION_TO_OLDER_SKILL.md",
+    "web-examples.md",
+}
 
 
 def fail(errors: list[str], path: Path, message: str) -> None:
@@ -101,8 +108,16 @@ def check_stale_paths(errors: list[str]) -> None:
                 fail(errors, path, f"stale path/group reference {stale!r}")
 
 
+def check_active_tree(errors: list[str]) -> None:
+    for path in sorted(ROOT.glob("**/*")):
+        if path.is_file() and path.name in DISALLOWED_ACTIVE_FILES:
+            fail(errors, path, "move package docs or development notes outside installable skills")
+
+
 def main() -> int:
     errors: list[str] = []
+
+    check_active_tree(errors)
 
     for path in sorted(ROOT.glob("**/SKILL.md")):
         check_skill(path, errors)
