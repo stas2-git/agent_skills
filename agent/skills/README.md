@@ -3,6 +3,9 @@
 These skills were distilled from the Kaggle Agent reference material into
 portable Codex skill folders.
 
+The top-level `SKILL.md` is a router skill that helps choose which focused skill
+to load.
+
 ## Included
 
 ### `core-methods/`
@@ -37,6 +40,8 @@ own `references/` folder.
 Copy selected skills into your Codex skills directory:
 
 ```bash
+mkdir -p ~/.codex/skills/agent-skills-router
+cp agent/skills/SKILL.md ~/.codex/skills/agent-skills-router/SKILL.md
 cp -R agent/skills/core-methods/agent-architecture-methods ~/.codex/skills/
 cp -R agent/skills/core-methods/agent-skill-design ~/.codex/skills/
 cp -R agent/skills/core-methods/agent-protocol-selector ~/.codex/skills/
@@ -55,4 +60,15 @@ Or install an entire group:
 
 ```bash
 cp -R agent/skills/self-improvement/* ~/.codex/skills/
+```
+
+To install the router and all focused skills:
+
+```bash
+mkdir -p ~/.codex/skills/agent-skills-router
+cp agent/skills/SKILL.md ~/.codex/skills/agent-skills-router/SKILL.md
+cp -R agent/skills/core-methods/* ~/.codex/skills/
+cp -R agent/skills/self-improvement/* ~/.codex/skills/
+cp -R agent/skills/adk-implementation/* ~/.codex/skills/
+cp -R agent/skills/capstone/* ~/.codex/skills/
 ```
