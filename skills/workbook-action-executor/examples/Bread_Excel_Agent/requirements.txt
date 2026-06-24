@@ -1,0 +1,22 @@
+openpyxl
+xlwings
+pandas
+python-dotenv>=1.0.0
+# pywin32
+XlsxWriter
+pyexcelerate
+xlrd
+xlwt
+xlutils
+pyexcel
+formulas
+pycel
+StyleFrame
+xlcalculator
+pyxll
+# datanitro
+litellm
+
+# PDF reading and table extraction
+pypdf>=3.17.0
+pdfplumber>=0.10.0

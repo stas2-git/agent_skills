@@ -1,0 +1,4355 @@
+{
+  "source": "hybrid_vba_plus_diff_v2",
+  "tool_format": "consolidated_109_tools",
+  "total_steps": 319,
+  "tool_sequence": [
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B2",
+        "value": "Income Statement:"
+      },
+      "timestamp": "2025-10-06 16:49:55",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_column_width",
+      "params": {
+        "column": "A",
+        "width": "2.83"
+      },
+      "timestamp": "2025-10-06 16:49:55",
+      "original_action": "column_width",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_column_width",
+      "params": {
+        "column": "B",
+        "width": "10.83"
+      },
+      "timestamp": "2025-10-06 16:49:55",
+      "original_action": "column_width",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:49:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:49:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A2",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:49:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B2",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:49:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C2",
+        "value": "2019-12-31 00:00:00"
+      },
+      "timestamp": "2025-10-06 16:50:10",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D2",
+        "value": "=EOMONTH(C2,12)"
+      },
+      "timestamp": "2025-10-06 16:50:10",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_column_width",
+      "params": {
+        "column": "B",
+        "width": "17.0"
+      },
+      "timestamp": "2025-10-06 16:50:10",
+      "original_action": "column_width",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_column_width",
+      "params": {
+        "column": "C",
+        "width": "10.83"
+      },
+      "timestamp": "2025-10-06 16:50:10",
+      "original_action": "column_width",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:10",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:10",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C2",
+        "number_format": "\"FY\"\\ yy",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"center\", \"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:10",
+      "original_actions": [
+        "format_number",
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D2",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"center\", \"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "\"FY\"\\ yy"
+      },
+      "timestamp": "2025-10-06 16:50:10",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E2",
+        "value": "=EOMONTH(D2,12)"
+      },
+      "timestamp": "2025-10-06 16:50:25",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:25",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E2",
+        "number_format": "\"FY\"\\ yy",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"center\", \"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:25",
+      "original_actions": [
+        "format_number",
+        "format_font",
+        "format_alignment",
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B4",
+        "value": "Products:"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B5",
+        "value": "Services:"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B6",
+        "value": "Total Revenue:"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(\"$\"* #,##0_);_(\"$\"* \\(#,##0\\);_(\"$\"* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(\"$\"* #,##0_);_(\"$\"* \\(#,##0\\);_(\"$\"* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(\"$\"* #,##0_);_(\"$\"* \\(#,##0\\);_(\"$\"* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A6",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_font",
+        "format_border"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_font",
+        "format_border",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_font",
+        "format_border",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:50:55",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_font",
+        "format_border",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B8",
+        "value": "Cost of Products:"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B9",
+        "value": "Cost of Services:"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B10",
+        "value": "Operating Expenses:"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:11",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B11",
+        "value": "Operating Income:"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B13",
+        "value": "Other Income / (Expense):"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A11",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_font",
+        "format_border",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_font",
+        "format_border",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_font",
+        "format_border",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:51:27",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B14",
+        "value": "Non-Service Pension Expense:"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B15",
+        "value": "Interest Income / (Expense):"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B16",
+        "value": "Pre-Tax Income:"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B18",
+        "value": "Income Taxes:"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A16",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_number",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_number",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_number",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:01",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B20",
+        "value": "Net Income:"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B21",
+        "value": "(-) NCI Net Income:"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "B22",
+        "value": "Net Income to Parent:"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_action": "cell_value",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A20",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B20",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C20",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D20",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E20",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"horizontal\": \"left\", \"indent\": 1.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "A22",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "B22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "C22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "number_format": "_(\"$\"* #,##0_);_(\"$\"* \\(#,##0\\);_(\"$\"* \"-\"_);_(@_)",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_number",
+        "format_border",
+        "format_font",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "D22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(\"$\"* #,##0_);_(\"$\"* \\(#,##0\\);_(\"$\"* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_number",
+        "format_font",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "E22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "number_format": "_(\"$\"* #,##0_);_(\"$\"* \\(#,##0\\);_(\"$\"* \"-\"_);_(@_)"
+      },
+      "timestamp": "2025-10-06 16:52:16",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_number",
+        "format_font",
+        "format_number"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J1",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F2",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G2",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H2",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I2",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J2",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J3",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J4",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J5",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J6",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J7",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J8",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J9",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J10",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J11",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_border",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J12",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J13",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J14",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J15",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J16",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J17",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J18",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J19",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F20",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G20",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H20",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I20",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J20",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J21",
+        "font": "{\"bold\": false, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "F22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "G22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "H22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "I22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "J22",
+        "font": "{\"bold\": true, \"italic\": false, \"size\": 12.0}",
+        "alignment": "{\"indent\": 0.0, \"text_rotation\": 0}",
+        "border": "{\"style\": \"thin\", \"sides\": [\"top\"]}"
+      },
+      "timestamp": "2025-10-06 16:52:46",
+      "original_actions": [
+        "format_font",
+        "format_alignment",
+        "format_border",
+        "format_font"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_column_width",
+      "params": {
+        "column": "B",
+        "width": "26.83"
+      },
+      "timestamp": "2025-10-06 16:53:21",
+      "original_action": "column_width",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C6",
+        "value": "=SUM(C4:C5)"
+      },
+      "timestamp": "2025-10-06 16:55:08",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D6",
+        "value": "=SUM(D4:D5)"
+      },
+      "timestamp": "2025-10-06 16:55:08",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E6",
+        "value": "=SUM(E4:E5)"
+      },
+      "timestamp": "2025-10-06 16:55:08",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C11",
+        "value": "=SUM(C8:C10)"
+      },
+      "timestamp": "2025-10-06 16:58:14",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D11",
+        "value": "=SUM(D8:D10)"
+      },
+      "timestamp": "2025-10-06 16:58:14",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E11",
+        "value": "=SUM(E8:E10)"
+      },
+      "timestamp": "2025-10-06 16:58:14",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C16",
+        "value": "=SUM(C13:C15)"
+      },
+      "timestamp": "2025-10-06 17:01:40",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D16",
+        "value": "=SUM(D13:D15)"
+      },
+      "timestamp": "2025-10-06 17:01:40",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E16",
+        "value": "=SUM(E13:E15)"
+      },
+      "timestamp": "2025-10-06 17:01:40",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C11",
+        "value": "=C6+SUM(C8:C10)"
+      },
+      "timestamp": "2025-10-06 17:03:06",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D11",
+        "value": "=D6+SUM(D8:D10)"
+      },
+      "timestamp": "2025-10-06 17:03:21",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E11",
+        "value": "=E6+SUM(E8:E10)"
+      },
+      "timestamp": "2025-10-06 17:03:21",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C16",
+        "value": "=C11+SUM(C13:C15)"
+      },
+      "timestamp": "2025-10-06 17:03:21",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D16",
+        "value": "=D11+SUM(D13:D15)"
+      },
+      "timestamp": "2025-10-06 17:03:36",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E16",
+        "value": "=E11+SUM(E13:E15)"
+      },
+      "timestamp": "2025-10-06 17:03:36",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C20",
+        "value": "=C16-C18"
+      },
+      "timestamp": "2025-10-06 17:03:51",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C20",
+        "value": "=C16+C18"
+      },
+      "timestamp": "2025-10-06 17:04:06",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D20",
+        "value": "=D16+D18"
+      },
+      "timestamp": "2025-10-06 17:04:52",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E20",
+        "value": "=E16+E18"
+      },
+      "timestamp": "2025-10-06 17:04:52",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C22",
+        "value": "=SUM(C20:C21)"
+      },
+      "timestamp": "2025-10-06 17:05:42",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D22",
+        "value": "=SUM(D20:D21)"
+      },
+      "timestamp": "2025-10-06 17:05:57",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E22",
+        "value": "=SUM(E20:E21)"
+      },
+      "timestamp": "2025-10-06 17:05:57",
+      "original_action": "cell_formula",
+      "source": "diff"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C2",
+        "value": "12/31/19"
+      },
+      "timestamp": "2025-10-07 16:50:05",
+      "original_action": "cell_value",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$B$6",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:52:35",
+      "original_actions": [
+        "format_bold",
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$B$11",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:52:42",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$B$16",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:52:46",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C4",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!S8:S8"
+      },
+      "timestamp": "2025-10-07 16:53:57",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D4",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!M8:M8"
+      },
+      "timestamp": "2025-10-07 16:54:07",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E4",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!G8:G8"
+      },
+      "timestamp": "2025-10-07 16:54:17",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C5",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!S9:S9"
+      },
+      "timestamp": "2025-10-07 16:54:32",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$C$6",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:54:32",
+      "original_actions": [
+        "format_bold",
+        "format_bold",
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D5",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!M9:M9"
+      },
+      "timestamp": "2025-10-07 16:54:42",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$D$6",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:54:42",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E5",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!G9:G9"
+      },
+      "timestamp": "2025-10-07 16:54:51",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$E$6",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:54:51",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C8",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!S12:S12"
+      },
+      "timestamp": "2025-10-07 16:55:34",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D8",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!M12:M12"
+      },
+      "timestamp": "2025-10-07 16:55:45",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D8",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!M12:M12"
+      },
+      "timestamp": "2025-10-07 16:55:53",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E8",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!G12:G12"
+      },
+      "timestamp": "2025-10-07 16:56:02",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C9",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!S13:S13"
+      },
+      "timestamp": "2025-10-07 16:56:19",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D9",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!M13:M13"
+      },
+      "timestamp": "2025-10-07 16:56:30",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E9",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!G13:G13"
+      },
+      "timestamp": "2025-10-07 16:56:41",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C10",
+        "value": "=-SUM('[101-01-Otis-10-K-Raw.xlsx]operations'!S15:S16)"
+      },
+      "timestamp": "2025-10-07 16:57:07",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$C$11",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:57:07",
+      "original_actions": [
+        "format_bold",
+        "format_bold",
+        "format_bold",
+        "format_bold",
+        "format_bold",
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C10",
+        "value": "=-SUM('[101-01-Otis-10-K-Raw.xlsx]operations'!S14:S15)"
+      },
+      "timestamp": "2025-10-07 16:57:23",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D10",
+        "value": "=-SUM('[101-01-Otis-10-K-Raw.xlsx]operations'!M14:M15)"
+      },
+      "timestamp": "2025-10-07 16:57:40",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$D$11",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:57:40",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E10",
+        "value": "=-SUM('[101-01-Otis-10-K-Raw.xlsx]operations'!G14:G15)"
+      },
+      "timestamp": "2025-10-07 16:57:53",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$E$11",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 16:57:53",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C13",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!S17:S17"
+      },
+      "timestamp": "2025-10-07 16:59:04",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D13",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!M17:M17"
+      },
+      "timestamp": "2025-10-07 16:59:18",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E13",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!G17:G17"
+      },
+      "timestamp": "2025-10-07 16:59:27",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C14",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!S19:S19"
+      },
+      "timestamp": "2025-10-07 16:59:52",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D14",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!M19:M19"
+      },
+      "timestamp": "2025-10-07 17:00:07",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E14",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!G19:G19"
+      },
+      "timestamp": "2025-10-07 17:00:20",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C15",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!S20:S20"
+      },
+      "timestamp": "2025-10-07 17:00:46",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D15",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!M20:M20"
+      },
+      "timestamp": "2025-10-07 17:00:58",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E15",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!G20:G20"
+      },
+      "timestamp": "2025-10-07 17:01:09",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C18",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!S22:S22"
+      },
+      "timestamp": "2025-10-07 17:02:20",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D18",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!M22:M22"
+      },
+      "timestamp": "2025-10-07 17:02:30",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E18",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!G22:G22"
+      },
+      "timestamp": "2025-10-07 17:02:42",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$C$16",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 17:03:15",
+      "original_actions": [
+        "format_bold",
+        "format_bold",
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C21",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!S24:S24"
+      },
+      "timestamp": "2025-10-07 17:04:32",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D21",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!M24:M24"
+      },
+      "timestamp": "2025-10-07 17:04:51",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E21",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!G24:G24"
+      },
+      "timestamp": "2025-10-07 17:04:59",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$B$22",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 17:05:32",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C14",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!S19:S19"
+      },
+      "timestamp": "2025-10-07 17:06:33",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D14",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!M19:M19"
+      },
+      "timestamp": "2025-10-07 17:06:37",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E14",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!G19:G19"
+      },
+      "timestamp": "2025-10-07 17:06:41",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "C15",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!S20:S20"
+      },
+      "timestamp": "2025-10-07 17:06:48",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "D15",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!M20:M20"
+      },
+      "timestamp": "2025-10-07 17:06:51",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$D$16",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 17:06:51",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E15",
+        "value": "=-'[101-01-Otis-10-K-Raw.xlsx]operations'!G20:G20"
+      },
+      "timestamp": "2025-10-07 17:06:54",
+      "original_action": "cell_formula",
+      "source": "vba"
+    },
+    {
+      "tool": "openpyxl_cell_set_style",
+      "params": {
+        "cell_reference": "$E$16",
+        "font": "{\"bold\": true}"
+      },
+      "timestamp": "2025-10-07 17:06:54",
+      "original_actions": [
+        "format_bold"
+      ],
+      "source": "diff_consolidated"
+    },
+    {
+      "tool": "openpyxl_worksheet_set_item",
+      "params": {
+        "key": "E13",
+        "value": "='[101-01-Otis-10-K-Raw.xlsx]operations'!G17:G17"
+      },
+      "timestamp": "2025-10-07 17:07:11",
+      "original_action": "cell_formula",
+      "source": "vba"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "actions": [
+    {
+      "command": "create-sheet",
+      "sheet": "Summary"
+    },
+    {
+      "command": "write-cells",
+      "sheet": "Summary",
+      "set": [
+        "A1=Tax Summary",
+        "A4=2025 Overview",
+        "A7=Estimated Total Tax",
+        "A8=Estimated Payments",
+        "A9=Estimated Balance"
+      ]
+    },
+    {
+      "command": "set-style",
+      "sheet": "Summary",
+      "ranges": [
+        "A1:H2"
+      ],
+      "preset": [
+        "section_header"
+      ],
+      "theme": {
+        "accent_fill": "1F4E78",
+        "header_font_color": "FFFFFF"
+      },
+      "alignment": {
+        "horizontal": "center",
+        "vertical": "center",
+        "wrap_text": true
+      }
+    },
+    {
+      "command": "set-style",
+      "sheet": "Summary",
+      "ranges": [
+        "A4:H4",
+        "A12:H12"
+      ],
+      "preset": [
+        "table_header"
+      ]
+    },
+    {
+      "command": "set-style",
+      "sheet": "Summary",
+      "ranges": [
+        "B7:H20"
+      ],
+      "preset": [
+        "formula_cell"
+      ],
+      "number_format": "currency"
+    },
+    {
+      "command": "set-sheet-view",
+      "sheet": "Summary",
+      "show_gridlines": false,
+      "tab_color": "1F4E78",
+      "zoom": 90,
+      "page_orientation": "landscape",
+      "fit_to_width": 1,
+      "fit_to_height": 0
+    },
+    {
+      "command": "cleanup-sheet",
+      "sheet": "Summary",
+      "title_ranges": [
+        "A1:H2"
+      ],
+      "section_header_ranges": [
+        "A4:H4"
+      ],
+      "table_header_ranges": [
+        "A12:H12"
+      ],
+      "numeric_ranges": [
+        "B7:H20"
+      ],
+      "autofit_columns": [
+        "A:H"
+      ],
+      "freeze_cell": "A6",
+      "show_gridlines": false,
+      "tab_color": "1F4E78",
+      "zoom": 90
+    }
+  ]
+}
