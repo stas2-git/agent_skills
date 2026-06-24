@@ -2,13 +2,14 @@
 
 Project workspace for developing and organizing agent skills.
 
-## Included Skills
+## Excel Package
 
-This repo vendors the Excel/workbook-related Codex skills so they can be moved
-to another machine through Git.
+This repo vendors the Excel/workbook-related Codex skills as a portable package
+so they can be moved to another machine through Git.
 
-See [skills/README.md](skills/README.md) for the copied skill set and install
-notes.
+See [excel/README.md](excel/README.md) for the package overview and
+[excel/skills/README.md](excel/skills/README.md) for the copied skill set and
+install notes.
 
 ## Reference Material
 

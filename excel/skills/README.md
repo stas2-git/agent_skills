@@ -1,4 +1,4 @@
-# Skills
+# Excel Skills
 
 This folder contains the Excel/workbook-oriented Codex skills copied from the
 local Codex skill directories.
@@ -28,7 +28,7 @@ Machine-local/generated files were intentionally left out:
 - prior decomposition/output workbook artifacts
 - prior drop-folder workbook artifacts
 
-On another machine, copy or symlink the needed folders from this `skills/`
+On another machine, copy or symlink the needed folders from this `excel/skills/`
 directory into the target Codex skills directory, usually:
 
 ```bash
@@ -38,12 +38,13 @@ directory into the target Codex skills directory, usually:
 For example:
 
 ```bash
-cp -R skills/excel-decompose ~/.codex/skills/
-cp -R skills/excel-automation ~/.codex/skills/
-cp -R skills/workbook-action-executor ~/.codex/skills/
-cp -R skills/workbook-pipeline ~/.codex/skills/
-cp -R skills/screen-interaction ~/.codex/skills/
-cp -R skills/_shared ~/.codex/skills/
+cp -R excel/skills/excel-decompose ~/.codex/skills/
+cp -R excel/skills/excel-automation ~/.codex/skills/
+cp -R excel/skills/workbook-action-executor ~/.codex/skills/
+cp -R excel/skills/workbook-pipeline ~/.codex/skills/
+cp -R excel/skills/screen-interaction ~/.codex/skills/
+cp -R excel/skills/spreadsheets ~/.codex/skills/
+cp -R excel/skills/_shared ~/.codex/skills/
 ```
 
 The `spreadsheets` skill came from the bundled primary runtime cache, so install
