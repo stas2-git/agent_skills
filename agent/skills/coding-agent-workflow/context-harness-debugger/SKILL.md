@@ -42,3 +42,8 @@ Use this skill to diagnose agent failures as harness, context, tool, or evaluati
 - Do not let the LLM context window become the database or message bus.
 - Do not accept a correct final answer if the tool trajectory was unsafe for an action-allowed workflow.
 
+## Evaluation Prompts
+
+- Positive: "My agent keeps looping and calling the wrong tool." Expected: diagnose context, tool list, instructions, guardrails, and eval gaps.
+- Positive edge: "The answer is right but it used unsafe tool calls." Expected: trajectory/harness repair, not model praise.
+- Negative: "The app has a runtime bug in this stack trace." Expected: normal debugging unless the failure is agent-harness behavior.

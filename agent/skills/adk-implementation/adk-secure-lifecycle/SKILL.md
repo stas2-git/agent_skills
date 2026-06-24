@@ -27,3 +27,8 @@ Use this skill when agent behavior touches real authority, sensitive data, user 
 - STRIDE review for new capabilities
 - Audit logs for approvals, denials, and state changes
 
+## Evaluation Prompts
+
+- Positive: "Secure this ADK tool-using agent before deployment." Expected: trust boundaries, validation, authorization, prompt-injection controls, tests, and human gates.
+- Positive edge: "The agent can run shell commands and access user data." Expected: least privilege, hooks, audit, secret handling, and adversarial evals.
+- Negative: "Explain STRIDE at a high level." Expected: explanation only, not a full secure lifecycle plan.

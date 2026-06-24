@@ -25,3 +25,8 @@ Use this skill to turn the capstone reference material into an actionable projec
 - For review: findings first, then required fixes, then optional improvements.
 - For writeup prep: concise outline with evidence the user should include.
 
+## Evaluation Prompts
+
+- Positive: "Plan my Kaggle Agent capstone and tell me what to submit." Expected: track, deliverables, eval plan, writeup/demo checklist, and open risks.
+- Positive edge: "Review my final capstone repo for missing requirements." Expected: pass/fail compliance checklist with exact gaps.
+- Negative: "Summarize this unrelated Kaggle notebook." Expected: no capstone planner unless submission planning or compliance is requested.

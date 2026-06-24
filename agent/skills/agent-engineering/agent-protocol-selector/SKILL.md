@@ -30,3 +30,8 @@ Use this skill to choose the right primitive instead of overloading one agent wi
 - Read `references/day2_agent_tools_interop.txt` for MCP, A2A, A2UI, AP2, UCP, and build-versus-buy guidance.
 - Read `references/day3_agent_skills.txt` for Skills versus MCP versus AGENTS.md and skill packaging tradeoffs.
 
+## Evaluation Prompts
+
+- Positive: "Should this be an MCP server, a skill, a script, or an A2A agent?" Expected: protocol decision with tradeoffs.
+- Positive edge: "This capability needs both external data and reusable instructions." Expected: split tool access from procedural skill where appropriate.
+- Negative: "Use the existing GitHub tool to list PRs." Expected: no protocol selection unless capability design is requested.

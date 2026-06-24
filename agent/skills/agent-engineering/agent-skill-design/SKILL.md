@@ -29,3 +29,8 @@ Use this skill to create practical, portable agent skills from repeated workflow
 - Concrete validation prompts
 - No duplicate information between `SKILL.md` and references
 
+## Evaluation Prompts
+
+- Positive: "Turn this recurring workflow into a Codex skill." Expected: scoped skill design with trigger, workflow, references/scripts/assets choice, and eval prompts.
+- Positive edge: "This whitepaper has useful agent ideas; extract practical skills." Expected: avoid source dump, create operating references and validation prompts.
+- Negative: "Use an existing skill to edit this file." Expected: no skill-design work unless the skill itself is being created or changed.

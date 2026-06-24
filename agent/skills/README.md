@@ -97,3 +97,13 @@ cp -R agent/skills/safety-governance/* ~/.codex/skills/
 cp -R agent/skills/adk-implementation/* ~/.codex/skills/
 cp -R agent/skills/capstone/* ~/.codex/skills/
 ```
+
+## Validate
+
+Run the local skill checks after adding, moving, or editing skills:
+
+```bash
+python3 agent/skills/scripts/validate_agent_skills.py
+```
+
+The validator checks frontmatter, folder/name alignment, reference links, code fences, eval prompt coverage, stale paths, and oversized references.

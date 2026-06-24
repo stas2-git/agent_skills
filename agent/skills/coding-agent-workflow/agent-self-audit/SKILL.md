@@ -44,3 +44,8 @@ Weak Spots Checked: ...
 Residual Risk: ...
 ```
 
+## Evaluation Prompts
+
+- Positive: "Before you finish, audit your work for likely mistakes." Expected: compact intent, verification, weak spots, and residual risk.
+- Positive edge: "You changed code and tests after a long thread; sanity check before final." Expected: context drift, trajectory, and verification review.
+- Negative: "Explain what a self-audit is." Expected: ordinary explanation, not a pre-final audit unless work is being finalized.

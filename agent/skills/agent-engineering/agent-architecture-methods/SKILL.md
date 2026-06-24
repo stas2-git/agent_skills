@@ -34,3 +34,8 @@ Use this skill to choose practical agent architecture patterns and convert inten
 - Observability and evaluation cases
 - Failure modes and rollback path
 
+## Evaluation Prompts
+
+- Positive: "Design an agent that reviews expense events and asks a manager for approval above a threshold." Expected: architecture with events, policy, LLM role, HITL, state, and evals.
+- Positive edge: "I have a vague idea for a research agent with web tools; make it production-ready." Expected: clarify boundaries, tool authority, safety, and evals before implementation.
+- Negative: "Write the Python function for this already-designed helper." Expected: no architecture skill unless design choices are still open.

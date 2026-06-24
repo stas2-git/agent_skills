@@ -40,3 +40,8 @@ Use this skill to move from "vibe" to production-grade agentic engineering.
 - Forensic specialist: reproduce, isolate root cause, and patch surgically.
 - Reviewer: summarize change, risk, and verification.
 
+## Evaluation Prompts
+
+- Positive: "Build this feature, but make it production-ready." Expected: lightweight spec, acceptance checks, scoped implementation, and verification.
+- Positive edge: "Fix this bug without guessing." Expected: reproduction/failing evidence before patching.
+- Negative: "What is BDD?" Expected: explanation only, not a full spec workflow.

@@ -28,3 +28,8 @@ Use this skill for moving an ADK agent from local implementation into Agent Runt
 - Logs/traces inspected after deployment
 - Rollback path documented
 
+## Evaluation Prompts
+
+- Positive: "Deploy my ADK agent to Agent Runtime." Expected: packaging, IAM, artifacts, telemetry, approval, remote validation, and rollback plan.
+- Positive edge: "Review this deployment plan before production." Expected: gates, secrets, regions, runtime identity, tests, and rollback risks.
+- Negative: "Deploy a static website." Expected: no ADK runtime skill unless Agent Runtime/ADK is involved.

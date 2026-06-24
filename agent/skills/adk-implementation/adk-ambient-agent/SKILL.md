@@ -27,3 +27,8 @@ Use this skill for ambient agents that react to events or scheduled triggers ins
 - Audit events for decision points
 - Tests for automatic, review, rejection, and injection cases
 
+## Evaluation Prompts
+
+- Positive: "Build an ADK agent that reacts to Pub/Sub events and pauses for human review." Expected: ambient/event-driven design with normalized input, policy, HITL, traces, and evals.
+- Positive edge: "Adapt this chat-only ADK agent to run on a schedule." Expected: trigger/cadence, transport normalization, replay, state, and authority boundaries.
+- Negative: "Write a regular FastAPI endpoint." Expected: no ambient-agent skill unless ADK event/scheduled behavior is involved.

@@ -39,3 +39,8 @@ Use this skill when a skill should become more reliable, not merely longer.
 - Treat every user correction as labeled failure data.
 - Keep human review in the loop for skill changes that broaden authority.
 
+## Evaluation Prompts
+
+- Positive: "Evaluate this skill and improve its trigger reliability." Expected: trigger, execution, token-budget, and regression cases before edits.
+- Positive edge: "This action-allowed skill works once; prove it is safe to promote." Expected: trajectory checks, adversarial cases, rollback, and human review.
+- Negative: "Use this skill to complete the user task." Expected: no skill-evaluation loop unless the skill itself is being tested or improved.
