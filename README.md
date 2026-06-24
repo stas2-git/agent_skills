@@ -2,6 +2,10 @@
 
 Project workspace for developing and organizing agent skills.
 
+The root [AGENTS.md](AGENTS.md) defines the always-on behavior for this repo:
+use the skill router, self-audit substantial work, and think in evals when skills
+change.
+
 ## Excel Package
 
 This repo vendors the Excel/workbook-related Codex skills as a portable package
