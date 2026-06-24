@@ -16,7 +16,8 @@ install notes.
 The `agent/` folder contains new Codex skills derived from the Kaggle Agent
 reference material. These turn the raw notes into reusable workflows for
 capstone planning, agent architecture, ADK ambient agents, security, deployment,
-human-in-the-loop frontends, and skill design.
+human-in-the-loop frontends, skill design, agent self-audit, harness debugging,
+skill evaluation, spec-driven workflow, and protocol selection.
 
 See [agent/README.md](agent/README.md).
 
