@@ -23,3 +23,7 @@ build/
 # Logs
 *.log
 
+# Raw SQL research/source material kept outside the public skills package
+reference-material/reference_texts/sql/
+reference-material/source_documents/mcp-odbc/
+reference-material/source_documents/mssql-mcp-python/
