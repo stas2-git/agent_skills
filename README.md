@@ -18,6 +18,10 @@ the router at `excel-skills/SKILL.md`, with focused skills underneath it for
 spreadsheet artifacts, workbook decomposition, deterministic workbook edits,
 live Excel automation, VBA/macros, workbook pipelines, and screen interaction.
 
+The `sql-skills/` folder is the copyable SQL skill package. It has the router at
+`sql-skills/SKILL.md`, with focused skills underneath it for actuarial SQL
+query writing/review and safe ODBC-backed database exploration/execution.
+
 Copy the whole folder into a skills library.
 
 Agent skills:
@@ -32,11 +36,18 @@ Excel skills:
 cp -R excel-skills /path/to/skills-library/excel-skills
 ```
 
+SQL skills:
+
+```bash
+cp -R sql-skills /path/to/skills-library/sql-skills
+```
+
 For Codex, that looks like:
 
 ```bash
 cp -R agent-skills ~/.codex/skills/agent-skills
 cp -R excel-skills ~/.codex/skills/excel-skills
+cp -R sql-skills ~/.codex/skills/sql-skills
 ```
 
 After install, the routers should be at:
@@ -44,6 +55,7 @@ After install, the routers should be at:
 ```text
 /path/to/skills-library/agent-skills/SKILL.md
 /path/to/skills-library/excel-skills/SKILL.md
+/path/to/skills-library/sql-skills/SKILL.md
 ```
 
 ## Reference Material
