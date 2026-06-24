@@ -18,7 +18,7 @@ Use this router to select the right focused SQL skill. Route first, then load th
 ## Routing
 
 ### Write or Review SQL
-Use `actuarial-sql` (`sql-skills/actuarial-sql` in this repo) when:
+Use `actuarial-sql` (`skills-library/sql-skills/actuarial-sql` in this repo) when:
 - Writing a new query against policy, claims, exposure, or rate tables
 - Joining multiple tables
 - Building loss triangles or development factor queries
@@ -27,7 +27,7 @@ Use `actuarial-sql` (`sql-skills/actuarial-sql` in this repo) when:
 - Explaining what a query does or why a join is wrong
 
 ### Execute SQL Against a Live Database
-Use `odbc-connector` (`sql-skills/odbc-connector` in this repo) when:
+Use `odbc-connector` (`skills-library/sql-skills/odbc-connector` in this repo) when:
 - Connecting to a database server
 - Exploring what tables and columns exist
 - Running a query and returning results

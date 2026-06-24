@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO = ROOT.parent
+REPO = ROOT.parents[1]
 MAX_SKILL_LINES = 120
 MAX_REFERENCE_LINES = 900
 STALE_PATHS = (
