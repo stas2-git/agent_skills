@@ -11,7 +11,7 @@ This repo is a portable skill library. Treat the skills as the primary product.
 
 ## Automatic Self-Improvement Habits
 
-- Before finishing substantial work, run a lightweight self-audit using the ideas in `agent/skills/self-improvement/agent-self-audit/SKILL.md`: intent, verification, trajectory, context drift, security risk, and residual risk.
+- Before finishing substantial work, run a lightweight self-audit using the ideas in `agent/skills/coding-agent-workflow/agent-self-audit/SKILL.md`: intent, verification, trajectory, context drift, security risk, and residual risk.
 - When a skill is changed, think in eval terms: what prompts should trigger it, what prompts should not trigger it, and what behavior proves success?
 - If a skill or agent behavior feels unreliable, prefer diagnosing the harness/context/tooling problem over adding more generic instructions.
 - For vague build requests, convert the request into a small spec or checklist before implementation.
@@ -23,4 +23,3 @@ This repo is a portable skill library. Treat the skills as the primary product.
 - Put long knowledge in `references/`, deterministic repeated logic in `scripts/`, and reusable output material in `assets/`.
 - Avoid broad, motivational, or gimmicky instructions. A good skill changes what the agent does.
 - Prefer edits that make routing sharper, behavior more verifiable, or references easier to load selectively.
-
