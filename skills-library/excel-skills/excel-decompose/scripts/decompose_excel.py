@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
-import json
 import re
 import subprocess
 import sys
@@ -13,10 +12,16 @@ from pathlib import Path
 from typing import Any
 
 from openpyxl import load_workbook
-from openpyxl.styles import DEFAULT_FONT
 from openpyxl.utils import get_column_letter
+from openpyxl.utils.cell import range_boundaries
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from formatting import (  # type: ignore  # noqa: E402
+    blank_style_has_strong_signal,
+    compact_json,
+    serialize_cell_style,
+)
 from _shared.llm_work_audit import (  # type: ignore  # noqa: E402
     append_run_event,
     artifact_path,
@@ -30,6 +35,7 @@ from _shared.llm_work_audit import (  # type: ignore  # noqa: E402
 
 VALID_INCLUDES = {"backup", "summary", "plan", "checklist"}
 MAX_CELL_SCAN = 100_000
+MAX_VALIDATION_CELL_RECORDS = 1_000
 
 
 def normalize_value(value) -> str:
@@ -69,157 +75,8 @@ def run_helper(command: list[str]) -> str:
     return completed.stdout.strip()
 
 
-def compact_json(value: dict[str, Any]) -> str:
-    return json.dumps(value, sort_keys=True, separators=(",", ":"))
-
-
 def clean_string(value) -> str:
     return str(value).replace("\n", " ").replace("\r", " ").strip()
-
-
-def meaningful_bool(value) -> bool:
-    return bool(value) is True
-
-
-def serialize_color(color) -> dict[str, Any] | None:
-    if color is None or color.type is None:
-        return None
-
-    if color.type == "rgb":
-        rgb = color.rgb
-        if not rgb:
-            return None
-        return {"type": "rgb", "rgb": rgb}
-    if color.type == "theme":
-        return {"type": "theme", "theme": color.theme, "tint": float(color.tint or 0.0)}
-    if color.type == "indexed":
-        return {"type": "indexed", "indexed": color.indexed}
-    if color.type == "auto":
-        return {"type": "auto", "auto": bool(color.auto)}
-    return {"type": str(color.type)}
-
-
-def colors_equal(left, right) -> bool:
-    return serialize_color(left) == serialize_color(right)
-
-
-def serialize_fill(fill) -> dict[str, Any] | None:
-    if not fill or fill.fill_type is None:
-        return None
-
-    result: dict[str, Any] = {"pattern_type": fill.fill_type}
-    fg_color = serialize_color(fill.fgColor)
-    bg_color = serialize_color(fill.bgColor)
-    if fg_color:
-        result["fg_color"] = fg_color
-    if bg_color and bg_color != fg_color and bg_color != {"type": "rgb", "rgb": "00000000"}:
-        result["bg_color"] = bg_color
-    return result
-
-
-def serialize_side(side) -> dict[str, Any] | None:
-    if side is None or side.style is None:
-        return None
-    result: dict[str, Any] = {"style": side.style}
-    color = serialize_color(side.color)
-    if color:
-        result["color"] = color
-    return result
-
-
-def serialize_border(border) -> dict[str, Any] | None:
-    if not border:
-        return None
-    result = {}
-    for side_name in ("left", "right", "top", "bottom"):
-        side = serialize_side(getattr(border, side_name))
-        if side:
-            result[side_name] = side
-    return result or None
-
-
-def serialize_font(font) -> dict[str, Any] | None:
-    if not font:
-        return None
-
-    result: dict[str, Any] = {}
-    if font.name != DEFAULT_FONT.name:
-        result["name"] = font.name
-    if font.sz != DEFAULT_FONT.sz:
-        result["size"] = float(font.sz) if font.sz is not None else None
-    if meaningful_bool(font.bold):
-        result["bold"] = True
-    if meaningful_bool(font.italic):
-        result["italic"] = True
-    if font.underline:
-        result["underline"] = font.underline
-    if meaningful_bool(font.strike):
-        result["strike"] = True
-    if not colors_equal(font.color, DEFAULT_FONT.color):
-        color = serialize_color(font.color)
-        if color:
-            result["color"] = color
-    return {key: value for key, value in result.items() if value is not None} or None
-
-
-def serialize_alignment(alignment) -> dict[str, Any] | None:
-    if not alignment:
-        return None
-
-    result: dict[str, Any] = {}
-    if alignment.horizontal:
-        result["horizontal"] = alignment.horizontal
-    if alignment.vertical:
-        result["vertical"] = alignment.vertical
-    if meaningful_bool(alignment.wrap_text):
-        result["wrap_text"] = True
-    if alignment.text_rotation:
-        result["text_rotation"] = alignment.text_rotation
-    if meaningful_bool(alignment.shrink_to_fit):
-        result["shrink_to_fit"] = True
-    if alignment.indent:
-        result["indent"] = alignment.indent
-    return result or None
-
-
-def serialize_protection(protection) -> dict[str, Any] | None:
-    if not protection:
-        return None
-    result: dict[str, Any] = {}
-    if protection.locked is False:
-        result["locked"] = False
-    if protection.hidden:
-        result["hidden"] = True
-    return result or None
-
-
-def serialize_cell_style(cell) -> dict[str, Any]:
-    style: dict[str, Any] = {}
-
-    fill = serialize_fill(cell.fill)
-    if fill:
-        style["fill"] = fill
-
-    border = serialize_border(cell.border)
-    if border:
-        style["border"] = border
-
-    if cell.number_format and cell.number_format != "General":
-        style["number_format"] = cell.number_format
-
-    font = serialize_font(cell.font)
-    if font:
-        style["font"] = font
-
-    alignment = serialize_alignment(cell.alignment)
-    if alignment:
-        style["alignment"] = alignment
-
-    protection = serialize_protection(cell.protection)
-    if protection:
-        style["protection"] = protection
-
-    return style
 
 
 def scan_bounds(ws) -> tuple[int, int, str | None]:
@@ -239,10 +96,53 @@ def scan_bounds(ws) -> tuple[int, int, str | None]:
     return capped_rows, max_col, warning
 
 
-def collect_sheet_records(ws_formula, ws_values, style_ids: dict[str, str]) -> tuple[list[dict[str, str]], int, str | None]:
+def style_id_for(style: dict[str, Any], style_ids: dict[str, str]) -> str:
+    style_key = compact_json(style)
+    style_id = style_ids.get(style_key)
+    if style_id is None:
+        style_id = f"s{len(style_ids) + 1}"
+        style_ids[style_key] = style_id
+    return style_id
+
+
+def comment_text(cell) -> str | None:
+    if not cell.comment or not cell.comment.text:
+        return None
+    return clean_string(cell.comment.text)
+
+
+def validation_refs_for_cell_records(ws, max_row: int, max_col: int) -> set[str]:
+    refs: set[str] = set()
+    for dv in getattr(ws.data_validations, "dataValidation", []):
+        for cell_range in dv.cells.ranges:
+            try:
+                range_min_col, range_min_row, range_max_col, range_max_row = range_boundaries(str(cell_range))
+            except ValueError:
+                continue
+            range_min_col = max(range_min_col, 1)
+            range_min_row = max(range_min_row, 1)
+            range_max_col = min(range_max_col, max_col)
+            range_max_row = min(range_max_row, max_row)
+            if range_min_col > range_max_col or range_min_row > range_max_row:
+                continue
+            cell_count = (range_max_col - range_min_col + 1) * (range_max_row - range_min_row + 1)
+            if cell_count > MAX_VALIDATION_CELL_RECORDS:
+                continue
+            for row_number in range(range_min_row, range_max_row + 1):
+                for column_number in range(range_min_col, range_max_col + 1):
+                    refs.add(f"{get_column_letter(column_number)}{row_number}")
+    return refs
+
+
+def collect_sheet_records(
+    ws_formula,
+    ws_values,
+    style_ids: dict[str, str],
+) -> tuple[list[dict[str, str]], int, str | None]:
     records: list[dict[str, str]] = []
     non_empty_count = 0
     max_row, max_col, scan_warning = scan_bounds(ws_formula)
+    validation_refs = validation_refs_for_cell_records(ws_formula, max_row, max_col)
 
     for row in ws_formula.iter_rows(min_row=1, max_row=max_row, min_col=1, max_col=max_col):
         for cell in row:
@@ -253,7 +153,14 @@ def collect_sheet_records(ws_formula, ws_values, style_ids: dict[str, str]) -> t
                 non_empty_count += 1
 
             style = serialize_cell_style(cell)
-            if not has_content and not style:
+            cell_comment = comment_text(cell)
+            has_single_cell_validation = cell.coordinate in validation_refs
+            has_meaningful_blank_signal = (
+                blank_style_has_strong_signal(style)
+                or bool(cell_comment)
+                or has_single_cell_validation
+            )
+            if not has_content and not has_meaningful_blank_signal:
                 continue
 
             record = {"ref": cell.coordinate}
@@ -265,12 +172,11 @@ def collect_sheet_records(ws_formula, ws_values, style_ids: dict[str, str]) -> t
                 record["value"] = normalize_value(display_value if display_value is not None else formula_value)
 
             if style:
-                style_key = compact_json(style)
-                style_id = style_ids.get(style_key)
-                if style_id is None:
-                    style_id = f"s{len(style_ids) + 1}"
-                    style_ids[style_key] = style_id
-                record["style"] = style_id
+                record["style"] = style_id_for(style, style_ids)
+            if cell_comment:
+                record["comment"] = cell_comment
+            if has_single_cell_validation:
+                record["validation"] = "true"
 
             records.append(record)
 
@@ -287,6 +193,10 @@ def render_cell_record(record: dict[str, str]) -> str:
         parts.append("blank")
     if record.get("style"):
         parts.append(f"style={record['style']}")
+    if record.get("validation"):
+        parts.append(f"validation={record['validation']}")
+    if record.get("comment"):
+        parts.append(f"comment={record['comment']}")
     return f"  - {record['ref']}: {' | '.join(parts)}"
 
 

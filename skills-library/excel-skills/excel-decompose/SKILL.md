@@ -102,8 +102,10 @@ skills/excel-decompose/.venv/bin/python skills/excel-decompose/scripts/reconstru
 - When `summary`, `plan`, or `checklist` are included, the downstream workbook-pipeline scripts run in the same `llm_work/runs/<timestamp>/` context so all artifacts land together.
 - Shared strings, formulas, defined names, and sheet ordering are included because those are usually the most useful parts for LLM reasoning.
 - A workbook-level `STYLES` section deduplicates material non-default formatting; cells reference styles as `style=s1`, `style=s2`, and so on.
-- Blank cells are omitted unless they carry material formatting or protection, such as a yellow unlocked input cell or a bordered blank cell.
+- Blank cells are omitted unless they carry strong workbook-UI signals such as visible fill, visible border, single-cell data validation, unlocked protection, or comment.
+- Font, alignment, and number-format differences are still serialized for emitted cells, but they do not by themselves cause an otherwise blank cell to be emitted.
 - Sheet-level `data_validations` sections preserve dropdown and input-rule ranges without expanding every validation cell into the cell list.
+- Decomposition still caps cell scanning for very large formatted ranges, so accidental whole-sheet or whole-column formatting does not flood the output.
 - VBA modules are appended in a separate `VBA MODULES` section.
 - Formatting output is intentionally compact and readability-first: default openpyxl style properties are omitted, while material fills, borders, number formats, fonts, alignment, and protection are captured for LLM workbook understanding.
 - Plain reconstruction targets `.xlsx`.
