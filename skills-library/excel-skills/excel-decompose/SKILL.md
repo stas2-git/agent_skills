@@ -14,7 +14,8 @@ Use this skill when the task is to convert an Excel workbook into a text artifac
 - Reconstruct a workbook inside an `.xlsm` macro shell so custom VBA functions can still work
 - Preserve workbook-level context such as sheet order and defined names
 - Preserve cell-level formulas and visible values for non-empty cells
-- Preserve lightweight readability metadata such as column widths, merged cells, freeze panes, hidden rows/columns, and tab colors
+- Preserve workbook UI and formatting semantics such as reusable cell styles, input-cell fills, borders, number formats, material font/alignment/protection settings, data validations, column widths, merged cells, freeze panes, hidden rows/columns, and tab colors
+- Preserve meaningful blank cells when formatting or protection marks them as workbook inputs or layout elements
 - Extract VBA modules from `.xlsm` workbooks into the text artifact
 - Write a single primary run artifact into `llm_work/runs/<timestamp>/artifacts/decomposition.txt`
 - Optionally write a separate custom export only when `--output` is explicitly provided
@@ -100,8 +101,11 @@ skills/excel-decompose/.venv/bin/python skills/excel-decompose/scripts/reconstru
 - `plan` and `checklist` require `--task` because they need the user request text.
 - When `summary`, `plan`, or `checklist` are included, the downstream workbook-pipeline scripts run in the same `llm_work/runs/<timestamp>/` context so all artifacts land together.
 - Shared strings, formulas, defined names, and sheet ordering are included because those are usually the most useful parts for LLM reasoning.
+- A workbook-level `STYLES` section deduplicates material non-default formatting; cells reference styles as `style=s1`, `style=s2`, and so on.
+- Blank cells are omitted unless they carry material formatting or protection, such as a yellow unlocked input cell or a bordered blank cell.
+- Sheet-level `data_validations` sections preserve dropdown and input-rule ranges without expanding every validation cell into the cell list.
 - VBA modules are appended in a separate `VBA MODULES` section.
-- Formatting is intentionally lightweight and readability-first: column widths, merged cells, freeze panes, hidden rows/columns, and tab colors are preserved, while numeric display is rebuilt with generic heuristics instead of exact per-cell Excel formats.
+- Formatting output is intentionally compact and readability-first: default openpyxl style properties are omitted, while material fills, borders, number formats, fonts, alignment, and protection are captured for LLM workbook understanding.
 - Plain reconstruction targets `.xlsx`.
 - Macro-preserving reconstruction keeps the VBA project from the shell workbook and writes a rebuilt `.xlsm`.
 

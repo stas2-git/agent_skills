@@ -10,8 +10,11 @@ import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 from openpyxl import load_workbook
+from openpyxl.styles import DEFAULT_FONT
+from openpyxl.utils import get_column_letter
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from _shared.llm_work_audit import (  # type: ignore  # noqa: E402
@@ -26,6 +29,7 @@ from _shared.llm_work_audit import (  # type: ignore  # noqa: E402
 )
 
 VALID_INCLUDES = {"backup", "summary", "plan", "checklist"}
+MAX_CELL_SCAN = 100_000
 
 
 def normalize_value(value) -> str:
@@ -65,9 +69,258 @@ def run_helper(command: list[str]) -> str:
     return completed.stdout.strip()
 
 
+def compact_json(value: dict[str, Any]) -> str:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"))
+
+
+def clean_string(value) -> str:
+    return str(value).replace("\n", " ").replace("\r", " ").strip()
+
+
+def meaningful_bool(value) -> bool:
+    return bool(value) is True
+
+
+def serialize_color(color) -> dict[str, Any] | None:
+    if color is None or color.type is None:
+        return None
+
+    if color.type == "rgb":
+        rgb = color.rgb
+        if not rgb:
+            return None
+        return {"type": "rgb", "rgb": rgb}
+    if color.type == "theme":
+        return {"type": "theme", "theme": color.theme, "tint": float(color.tint or 0.0)}
+    if color.type == "indexed":
+        return {"type": "indexed", "indexed": color.indexed}
+    if color.type == "auto":
+        return {"type": "auto", "auto": bool(color.auto)}
+    return {"type": str(color.type)}
+
+
+def colors_equal(left, right) -> bool:
+    return serialize_color(left) == serialize_color(right)
+
+
+def serialize_fill(fill) -> dict[str, Any] | None:
+    if not fill or fill.fill_type is None:
+        return None
+
+    result: dict[str, Any] = {"pattern_type": fill.fill_type}
+    fg_color = serialize_color(fill.fgColor)
+    bg_color = serialize_color(fill.bgColor)
+    if fg_color:
+        result["fg_color"] = fg_color
+    if bg_color and bg_color != fg_color and bg_color != {"type": "rgb", "rgb": "00000000"}:
+        result["bg_color"] = bg_color
+    return result
+
+
+def serialize_side(side) -> dict[str, Any] | None:
+    if side is None or side.style is None:
+        return None
+    result: dict[str, Any] = {"style": side.style}
+    color = serialize_color(side.color)
+    if color:
+        result["color"] = color
+    return result
+
+
+def serialize_border(border) -> dict[str, Any] | None:
+    if not border:
+        return None
+    result = {}
+    for side_name in ("left", "right", "top", "bottom"):
+        side = serialize_side(getattr(border, side_name))
+        if side:
+            result[side_name] = side
+    return result or None
+
+
+def serialize_font(font) -> dict[str, Any] | None:
+    if not font:
+        return None
+
+    result: dict[str, Any] = {}
+    if font.name != DEFAULT_FONT.name:
+        result["name"] = font.name
+    if font.sz != DEFAULT_FONT.sz:
+        result["size"] = float(font.sz) if font.sz is not None else None
+    if meaningful_bool(font.bold):
+        result["bold"] = True
+    if meaningful_bool(font.italic):
+        result["italic"] = True
+    if font.underline:
+        result["underline"] = font.underline
+    if meaningful_bool(font.strike):
+        result["strike"] = True
+    if not colors_equal(font.color, DEFAULT_FONT.color):
+        color = serialize_color(font.color)
+        if color:
+            result["color"] = color
+    return {key: value for key, value in result.items() if value is not None} or None
+
+
+def serialize_alignment(alignment) -> dict[str, Any] | None:
+    if not alignment:
+        return None
+
+    result: dict[str, Any] = {}
+    if alignment.horizontal:
+        result["horizontal"] = alignment.horizontal
+    if alignment.vertical:
+        result["vertical"] = alignment.vertical
+    if meaningful_bool(alignment.wrap_text):
+        result["wrap_text"] = True
+    if alignment.text_rotation:
+        result["text_rotation"] = alignment.text_rotation
+    if meaningful_bool(alignment.shrink_to_fit):
+        result["shrink_to_fit"] = True
+    if alignment.indent:
+        result["indent"] = alignment.indent
+    return result or None
+
+
+def serialize_protection(protection) -> dict[str, Any] | None:
+    if not protection:
+        return None
+    result: dict[str, Any] = {}
+    if protection.locked is False:
+        result["locked"] = False
+    if protection.hidden:
+        result["hidden"] = True
+    return result or None
+
+
+def serialize_cell_style(cell) -> dict[str, Any]:
+    style: dict[str, Any] = {}
+
+    fill = serialize_fill(cell.fill)
+    if fill:
+        style["fill"] = fill
+
+    border = serialize_border(cell.border)
+    if border:
+        style["border"] = border
+
+    if cell.number_format and cell.number_format != "General":
+        style["number_format"] = cell.number_format
+
+    font = serialize_font(cell.font)
+    if font:
+        style["font"] = font
+
+    alignment = serialize_alignment(cell.alignment)
+    if alignment:
+        style["alignment"] = alignment
+
+    protection = serialize_protection(cell.protection)
+    if protection:
+        style["protection"] = protection
+
+    return style
+
+
+def scan_bounds(ws) -> tuple[int, int, str | None]:
+    max_row = max(ws.max_row or 1, 1)
+    max_col = max(ws.max_column or 1, 1)
+    total_cells = max_row * max_col
+    if total_cells <= MAX_CELL_SCAN:
+        return max_row, max_col, None
+
+    capped_rows = max(1, MAX_CELL_SCAN // max_col)
+    capped_rows = min(capped_rows, max_row)
+    capped_ref = f"A1:{get_column_letter(max_col)}{capped_rows}"
+    warning = (
+        f"cell scan capped at {capped_ref}; worksheet dimension {ws.calculate_dimension()} "
+        f"spans {total_cells} cells, so style-only blank cells beyond the cap were omitted"
+    )
+    return capped_rows, max_col, warning
+
+
+def collect_sheet_records(ws_formula, ws_values, style_ids: dict[str, str]) -> tuple[list[dict[str, str]], int, str | None]:
+    records: list[dict[str, str]] = []
+    non_empty_count = 0
+    max_row, max_col, scan_warning = scan_bounds(ws_formula)
+
+    for row in ws_formula.iter_rows(min_row=1, max_row=max_row, min_col=1, max_col=max_col):
+        for cell in row:
+            formula_value = cell.value
+            display_value = ws_values[cell.coordinate].value
+            has_content = formula_value is not None or display_value is not None
+            if formula_value is not None:
+                non_empty_count += 1
+
+            style = serialize_cell_style(cell)
+            if not has_content and not style:
+                continue
+
+            record = {"ref": cell.coordinate}
+            if isinstance(formula_value, str) and formula_value.startswith("="):
+                record["formula"] = clean_string(formula_value[1:])
+                if display_value is not None:
+                    record["value"] = normalize_value(display_value)
+            elif has_content:
+                record["value"] = normalize_value(display_value if display_value is not None else formula_value)
+
+            if style:
+                style_key = compact_json(style)
+                style_id = style_ids.get(style_key)
+                if style_id is None:
+                    style_id = f"s{len(style_ids) + 1}"
+                    style_ids[style_key] = style_id
+                record["style"] = style_id
+
+            records.append(record)
+
+    return records, non_empty_count, scan_warning
+
+
+def render_cell_record(record: dict[str, str]) -> str:
+    parts = []
+    if record.get("formula"):
+        parts.append(f"formula={record['formula']}")
+    if "value" in record:
+        parts.append(f"value={record['value']}")
+    if "formula" not in record and "value" not in record:
+        parts.append("blank")
+    if record.get("style"):
+        parts.append(f"style={record['style']}")
+    return f"  - {record['ref']}: {' | '.join(parts)}"
+
+
+def serialize_data_validation(dv) -> dict[str, Any]:
+    result: dict[str, Any] = {"range": str(dv.sqref)}
+    for attr in ("type", "operator", "formula1", "formula2"):
+        value = getattr(dv, attr, None)
+        if value is not None:
+            result[attr] = value
+    if dv.allow_blank is not None:
+        result["allow_blank"] = bool(dv.allow_blank)
+
+    for attr in ("errorTitle", "error", "promptTitle", "prompt"):
+        value = getattr(dv, attr, None)
+        if value:
+            result[attr] = clean_string(value)
+    return result
+
+
 def render_output(workbook_path: Path, wb_formula, wb_values) -> str:
     lines = []
     timestamp = dt.datetime.now().isoformat(timespec="seconds")
+    style_ids: dict[str, str] = {}
+    sheet_records: dict[str, dict[str, Any]] = {}
+
+    for sheet_name in wb_formula.sheetnames:
+        records, non_empty_count, scan_warning = collect_sheet_records(
+            wb_formula[sheet_name], wb_values[sheet_name], style_ids
+        )
+        sheet_records[sheet_name] = {
+            "cells": records,
+            "non_empty_count": non_empty_count,
+            "scan_warning": scan_warning,
+        }
 
     lines.append("WORKBOOK DECOMPOSITION")
     lines.append(f"source_file: {workbook_path}")
@@ -93,13 +346,23 @@ def render_output(workbook_path: Path, wb_formula, wb_values) -> str:
         lines.append("- none")
     lines.append("")
 
+    lines.append("STYLES")
+    if style_ids:
+        for style_key, style_id in sorted(style_ids.items(), key=lambda item: int(item[1][1:])):
+            lines.append(f"  {style_id}: {style_key}")
+    else:
+        lines.append("  - none")
+    lines.append("")
+
     for sheet_name in wb_formula.sheetnames:
         ws_formula = wb_formula[sheet_name]
-        ws_values = wb_values[sheet_name]
+        records_info = sheet_records[sheet_name]
 
         lines.append(f"SHEET: {sheet_name}")
         lines.append(f"dimension: {ws_formula.calculate_dimension()}")
-        lines.append(f"non_empty_cell_count: {sum(1 for row in ws_formula.iter_rows() for cell in row if cell.value is not None)}")
+        lines.append(f"non_empty_cell_count: {records_info['non_empty_count']}")
+        if records_info["scan_warning"]:
+            lines.append(f"scan_warning: {records_info['scan_warning']}")
         if ws_formula.sheet_view.selection and ws_formula.freeze_panes:
             lines.append(f"freeze_panes: {ws_formula.freeze_panes}")
         if ws_formula.sheet_properties.tabColor and ws_formula.sheet_properties.tabColor.rgb:
@@ -134,30 +397,21 @@ def render_output(workbook_path: Path, wb_formula, wb_values) -> str:
             for row_number in hidden_rows:
                 lines.append(f"  - {row_number}")
 
+        validations = [
+            serialize_data_validation(dv)
+            for dv in getattr(ws_formula.data_validations, "dataValidation", [])
+            if str(dv.sqref)
+        ]
+        if validations:
+            lines.append("data_validations:")
+            for validation in validations:
+                lines.append(f"  - {compact_json(validation)}")
+
         lines.append("cells:")
-        found = False
-        for row in ws_formula.iter_rows():
-            for cell in row:
-                formula_value = cell.value
-                display_value = ws_values[cell.coordinate].value
-                if formula_value is None and display_value is None:
-                    continue
-
-                found = True
-                formula_text = ""
-                if isinstance(formula_value, str) and formula_value.startswith("="):
-                    formula_text = formula_value[1:].replace("\n", " ").replace("\r", " ").strip()
-
-                value_text = normalize_value(display_value if display_value is not None else formula_value)
-
-                if formula_text and value_text:
-                    lines.append(f"  - {cell.coordinate}: formula={formula_text} | value={value_text}")
-                elif formula_text:
-                    lines.append(f"  - {cell.coordinate}: formula={formula_text}")
-                else:
-                    lines.append(f"  - {cell.coordinate}: value={value_text}")
-
-        if not found:
+        if records_info["cells"]:
+            for record in records_info["cells"]:
+                lines.append(render_cell_record(record))
+        else:
             lines.append("  - none")
         lines.append("")
 
