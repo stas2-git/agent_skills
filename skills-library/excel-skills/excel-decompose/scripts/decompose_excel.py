@@ -14,6 +14,7 @@ from typing import Any
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 from openpyxl.utils.cell import range_boundaries
+from openpyxl.worksheet.formula import ArrayFormula
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
@@ -77,6 +78,22 @@ def run_helper(command: list[str]) -> str:
 
 def clean_string(value) -> str:
     return str(value).replace("\n", " ").replace("\r", " ").strip()
+
+
+def formula_text_from_value(value) -> str | None:
+    if isinstance(value, ArrayFormula):
+        text = getattr(value, "text", None)
+        if not text:
+            return None
+        text = clean_string(text)
+        if text.startswith("="):
+            text = text[1:]
+        return clean_string(text) or None
+
+    if isinstance(value, str) and value.startswith("="):
+        return clean_string(value[1:]) or None
+
+    return None
 
 
 def scan_bounds(ws) -> tuple[int, int, str | None]:
@@ -164,8 +181,9 @@ def collect_sheet_records(
                 continue
 
             record = {"ref": cell.coordinate}
-            if isinstance(formula_value, str) and formula_value.startswith("="):
-                record["formula"] = clean_string(formula_value[1:])
+            formula_text = formula_text_from_value(formula_value)
+            if formula_text:
+                record["formula"] = formula_text
                 if display_value is not None:
                     record["value"] = normalize_value(display_value)
             elif has_content:

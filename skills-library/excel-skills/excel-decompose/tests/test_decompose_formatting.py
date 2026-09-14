@@ -7,6 +7,7 @@ from pathlib import Path
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Protection, Side
 from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.worksheet.formula import ArrayFormula
 
 
 SCRIPT_PATH = Path(__file__).resolve().parents[1] / "scripts" / "decompose_excel.py"
@@ -198,3 +199,19 @@ def test_formula_cached_value_output_is_preserved(tmp_path: Path) -> None:
         wb_values.close()
 
     assert "- C14: formula=C13*1.1 | value=13750 | style=" in text
+
+
+def test_array_formula_output_is_preserved(tmp_path: Path) -> None:
+    workbook_path = tmp_path / "array_formula.xlsx"
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Array"
+    ws["A1"] = ArrayFormula("A1:A3", "=SEQUENCE(3)")
+    wb.save(workbook_path)
+    wb.close()
+
+    text = render(workbook_path)
+
+    assert "- A1: formula=SEQUENCE(3)" in text
+    assert "- A2:" not in text
+    assert "- A3:" not in text
