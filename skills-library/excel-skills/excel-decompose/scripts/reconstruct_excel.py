@@ -8,6 +8,7 @@ from typing import Optional
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Color
 from openpyxl.workbook.defined_name import DefinedName, DefinedNameDict
+from openpyxl.worksheet.formula import ArrayFormula
 
 
 SHEET_PREFIX = "SHEET: "
@@ -72,14 +73,15 @@ def parse_cell_line(line: str) -> dict:
 
     formula = ""
     value = ""
+    array_ref = ""
     for part in parts:
         if part.startswith("formula="):
-            formula = part[len("formula="):]
+            formula = part[len("formula=") :]
         elif part.startswith("value="):
-            value = part[len("value="):]
-    return {"ref": ref.strip(), "formula": formula, "value": value}
-
-
+            value = part[len("value=") :]
+        elif part.startswith("array_ref="):
+            array_ref = part[len("array_ref=") :]
+    return {"ref": ref.strip(), "formula": formula, "value": value, "array_ref": array_ref}
 def parse_decomposition(text: str) -> dict:
     lines = text.splitlines()
     idx = 0
@@ -229,7 +231,10 @@ def build_workbook(parsed: dict, macro_shell: Optional[Path] = None) -> Workbook
                 formula = cell["formula"]
                 if not formula.startswith("="):
                     formula = "=" + formula
-                target.value = formula
+                if cell.get("array_ref"):
+                    target.value = ArrayFormula(ref=cell["array_ref"], text=formula)
+                else:
+                    target.value = formula
             else:
                 target.value = infer_value(cell["value"])
 

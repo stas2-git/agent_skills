@@ -184,6 +184,10 @@ def collect_sheet_records(
             formula_text = formula_text_from_value(formula_value)
             if formula_text:
                 record["formula"] = formula_text
+                if isinstance(formula_value, ArrayFormula):
+                    array_ref = getattr(formula_value, "ref", None)
+                    if array_ref:
+                        record["array_ref"] = array_ref
                 if display_value is not None:
                     record["value"] = normalize_value(display_value)
             elif has_content:
@@ -205,6 +209,8 @@ def render_cell_record(record: dict[str, str]) -> str:
     parts = []
     if record.get("formula"):
         parts.append(f"formula={record['formula']}")
+    if record.get("array_ref"):
+        parts.append(f"array_ref={record['array_ref']}")
     if "value" in record:
         parts.append(f"value={record['value']}")
     if "formula" not in record and "value" not in record:

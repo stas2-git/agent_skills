@@ -212,6 +212,6 @@ def test_array_formula_output_is_preserved(tmp_path: Path) -> None:
 
     text = render(workbook_path)
 
-    assert "- A1: formula=SEQUENCE(3)" in text
+    assert "- A1: formula=SEQUENCE(3) | array_ref=A1:A3" in text
     assert "- A2:" not in text
     assert "- A3:" not in text
